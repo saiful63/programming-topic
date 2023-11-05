@@ -1,0 +1,5 @@
+*An abstract class can have only abstract methods or only non-abstract method or both,but all method of an interface are abstract by default.
+*An abstract class can declare properties/methods with access specifier,but interface can declare only constant properties(no other type properties) and method ade by default abstract and public.
+*A class can inherit only one abstract class and multiple inheritance is not possible for abstract class but a class can implement more than one interface and can achieve multiple inheritance.
+*If a class contains even a single abstract method that class must be declared as abstract.
+*In an abstract class,you can define its methods as well as its body but in interface you can only define your methods.

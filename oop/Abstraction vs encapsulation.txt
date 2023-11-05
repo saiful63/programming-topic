@@ -1,0 +1,6 @@
+1.Abstraction,It also provide design philosophy or idea  of syatem taht what type of design we are going to do.
+
+2.Encapsulation,how to implement the design.
+
+As a exampla:
+ If we consider a banking system,where user can deposit and withdraw money.From this we assume deposit and withdraw is needed for user interaction.It is called abstraction.But in the time of implementation,we expose deposit and witdraw for user interaction and hide user validation  and  internal other  process  that is related to system.It is actually encapsulation.So it is actually the implementation of design.

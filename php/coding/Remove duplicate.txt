@@ -1,0 +1,14 @@
+$arr = [2, 2, 3, 4];
+
+for ($i = 0; $i < count($arr); $i++) {
+    $current = $arr[$i];
+    $next = $arr[$i + 1] ?? null;
+
+    if ($current == $next) {
+        continue;
+    } else {
+        echo $current;
+    }
+}
+
+output:2,2,4

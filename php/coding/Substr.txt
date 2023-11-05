@@ -1,0 +1,59 @@
+Sourc:https://www.phptutorial.net/php-tutorial/php-substr/
+
+substr() function accepts a string and returns a substring from the string.
+
+substr ( string $string , int $offset , int|null $length = null ) : string
+
+$string is the input string.
+$offset is the position at which the function begins to extract the substring.
+$length is the number of characters to include in the substring. If you omit the $length argument, the substr() function will extract a substring from the $offset to the end of the $string. If the $length is 0, false, or null, the substr() function returns an empty string.
+
+1) Simple PHP substr() function example
+The following example uses the substr() function to extract the first three characters from a string:
+
+<?php
+
+$s = 'PHP substring';
+$result = substr($s, 0, 3); 
+
+echo $result;// PHP
+
+In this example, the substr() function extract the first 3 characters from the 'PHP substring' string starting at the index 0.
+
+2) Using PHP substr() function with the default length argument
+The following example uses the substr() function to extract a substring from the 'PHP substring' string starting from the index 4 to the end of the string:
+
+<?php
+
+$s = 'PHP substring';
+$result = substr($s, 4);
+
+echo $result; // substring
+
+In this example, we omit the $length argument. Therefore, the substr() returns a substring, starting at index 4 to the end of the input string.
+
+3)PHP substr() function with negative offset
+The $offset argument can be a negative number. If the $offset is negative, the substr() function returns a substring that starts at the offset character from the end of the string. The last character in the input string has an index of -1.
+
+The following example illustrates how to use the substr() function with negative offset:
+
+<?php
+
+$s = 'PHP is cool';
+$result = substr($s, -4);
+
+echo $result; // cool
+Code language: HTML, XML (xml)
+In this example, the substr() returns a substring that at 4th character from the end of the string.
+
+4)PHP substr() function with negative length
+Like the $offset argument, the $length argument can be negative. If you pass a negative number to the $length argument, the substr() function will omit a $length number of characters in the returned substring.
+
+The following example illustrates how to use the substr() with a negative $offset and $length arguments:
+
+<?php
+
+$s = 'PHP is cool';
+$result = substr($s, -7, -5);
+
+echo $result; // is

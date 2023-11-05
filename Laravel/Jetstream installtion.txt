@@ -1,0 +1,12 @@
+composer create-project laravel/laravel <your-project-name>:*
+composer require laravel/jetstream
+
+php artisan jetstream:install livewire
+
+php artisan jetstream:install livewire --teams
+
+npm install
+npm run build
+php artisan migrate
+
+php artisan vendor:publish --tag=jetstream-views

@@ -1,0 +1,61 @@
+*HomeWe.vue(parent)
+
+<template>
+    <h1>Home component</h1>
+    <ChildPrac name="Saiful" :user="user" :getData="getData"/>
+    
+    
+</template>
+
+<script>
+import ChildPrac from './ChildPrac.vue'
+
+export default{
+    name:'HomeWe',
+    components:{
+        ChildPrac
+    },
+    data(){
+        return{
+           user:{
+            name:'Raihan',
+            email:'raihan@gmail.com'
+           } 
+        }
+    },
+    methods:{
+        getData(){
+            
+            alert('Passed to chold');
+        }
+    }
+    
+}
+</script>
+
+<style scoped>
+h1{
+    color: orange;
+}
+</style>
+
+
+*ChildPrac.vue
+
+<template>
+    <h2>{{name}}</h2>
+    <h2>{{user.email}}</h2>
+    <button v-on:click="getData()">Click</button>
+</template>
+
+<script>
+export default{
+    name:'ChildPrac',
+    props:{
+        name:String,
+        user:Object,
+        getData:Function
+    }
+}
+</script>
+

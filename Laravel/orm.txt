@@ -1,0 +1,10 @@
+*Object Relational Mapping (ORM) is the bridge between databases and object-oriented programming.
+
+ORM stands for Object-Relational Mapping. It is a programming technique used to map objects in an object-oriented programming language to relational database tables. ORM frameworks provide a way to interact with databases using objects, making it easier to perform database operations without writing raw SQL queries.As a example a object have id,name and reated column have in DB table,orm come and take object data and databse operation with developer friendly without interaction of sql query.
+
+1.The Object part is the one you use with your programming language ( python in this case )
+
+2.The Relational part is a Relational Database Manager System ( A database that is ) there are other types of databases but the most popular is relational ( you know tables, columns, pk fk etc eg Oracle MySQL, MS-SQL )
+
+3.And finally the Mapping part is where you do a bridge between your objects and your tables.
+

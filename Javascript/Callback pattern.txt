@@ -1,0 +1,41 @@
+*First enrollment process,after progress and then getcertificate
+
+ <script>
+      let payment = true;
+let mark = 70;
+
+function enroll(callback) {
+  console.log('You enrolled for the course');
+
+  setTimeout(function() {
+    if (payment) {
+      callback();
+    }
+  }, 2000);
+}
+
+function progress(callback) {
+  console.log('Your course is in progress');
+
+  setTimeout(function() {
+    if (mark > 80) {
+      callback();
+    } else {
+      console.log('You did not get enough mark');
+      getCertificate(); // Call getCertificate function here
+    }
+  }, 3000);
+}
+
+function getCertificate() {
+  setTimeout(function() {
+    console.log('Please participate in the exam');
+  }, 1000);
+}
+
+enroll(function() {
+  progress(getCertificate);
+});
+
+
+   </script>

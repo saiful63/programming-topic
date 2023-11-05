@@ -1,0 +1,39 @@
+const hasMeeting = true;
+
+const meeting = new Promise((resolve,reject)=>{
+    if(hasMeeting){
+        const meetingDetails={
+            name:"meeting",
+            platform:"Zoom",
+            Time:"10 AM",
+        };
+        resolve(meetingDetails);
+    }else{
+        reject(new Error("Meeting already scheduled!"));
+    }
+});
+
+const addToCalender = (meetingDetails)=>{
+	//   return new Promise((resolve,reject)=>{
+	//      const calendar = `${meetingDetails.name} has been scheduled in ${meetingDetails.Time} in ${meetingDetails.platform}`;
+	//      resolve(calendar);
+	//     });
+
+	//Comment portion work,instead we can write in short form
+
+	const calendar = `${meetingDetails.name} has been scheduled in ${meetingDetails.Time} in ${meetingDetails.platform}`;
+	return Promise.resolve(calendar);
+};
+
+meeting
+       .then(addToCalender)
+      .then((res)=>{
+        console.log(res)
+      })
+      .catch((err)=>{
+        console.log(err.message);
+      });
+      
+ Output:meeting has been scheduled in 10 AM in Zoom
+ Here two promise is used, meeting promise for creating meeting object and calender promise inside addoCAlendar function used for acces meeting.
+

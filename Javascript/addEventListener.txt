@@ -1,0 +1,26 @@
+*The addEventListener() method attaches an event handler to the specified element.
+*When using the addEventListener() method, the JavaScript is separated from the HTML markup, for better readability and allows you to add event listeners even when you do not control the HTML markup
+
+
+const button = document.getElementById('btn');
+const container = document.getElementById('container'); 
+function chFun(){
+    console.log(7+1);
+}
+
+
+button.addEventListener('click',function(){
+    alert(2+3);
+});
+
+button.addEventListener("click", function () {
+	chFun(2+3);
+});
+
+button.addEventListener("click", chFun);
+
+
+container.addEventListener("click",function(){
+    console.log('container');
+},true);
+

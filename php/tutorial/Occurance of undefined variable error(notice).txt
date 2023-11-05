@@ -1,0 +1,11 @@
+Reason:
+1.When variable is not declared and we are try to access this variable.
+   ex:echo $var;
+   
+2.When variable is declared but value is not initialized and we are try to access this variable.
+   ex: $var;  
+   echo $var;
+   
+3.When we try to access variable wrongly such as writting mistake;
+   ex: $var;  
+   echo $vars;

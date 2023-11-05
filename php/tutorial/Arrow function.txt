@@ -1,0 +1,9 @@
+Arrow functions are supposed to be a more concise version of anonymous functions. Arrow functions can be seen as shorthand functions that automatically inherit the parent scope’s variables. This is an advantage arrow functions have over regular functions and even anonymous functions.
+
+$ar = fn($a,$b)=>$a+$b;
+echo $ar(2,3);
+
+Another example:
+$me = "Hello";
+$ar = fn($name)=>$me.$name;
+echo $ar('Saiful');  //output:Hello saiful

@@ -1,0 +1,18 @@
+$s = "cbaebabacdaa";
+$p = "abc";
+
+$pl = strlen($p);
+$sl = strlen($s);
+
+$p=str_split($p);
+sort($p);
+
+for ($i = 0; $i <= $sl - $pl; $i++) { 
+   $temps = str_split(substr($s,$i,$pl));
+   sort($temps);
+   if($temps === $p){
+    echo "Yes";
+   }
+}
+Outpt:Yes Yes
+Every time it compare $p with $s newly generated 3 character length string such as(cba,bae,aeb,eba,bab,aba,bac,acd,cda)

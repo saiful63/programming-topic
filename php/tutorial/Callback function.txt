@@ -1,0 +1,56 @@
+Function that is passed to argument of another function is known as callback function.
+
+function disp($name){
+   return $name();
+}
+
+echo disp(
+    function(){
+       return 'SAiful';
+    }
+);
+
+*Another example  with normal function
+
+function processArray($array, $callback) {
+    $result = [];
+    foreach ($array as $element) {
+        $result[] = $callback($element);
+    }
+    return $result;
+}
+
+// Define a callback function
+function square($number) {
+    return $number * $number;
+}
+
+$numbers = [1, 2, 3, 4, 5];
+
+// Use the callback function to process the array
+$result = processArray($numbers, 'square');
+
+print_r($result); // Outputs: Array ( [0] => 1 [1] => 4 [2] => 9 [3] => 16 [4] => 25 )
+
+*Another example with anonymous function:
+
+function preparingForCook($em,$callback){
+   return $em.' '.$callback();
+}
+
+
+
+$cook=preparingForCook('processing',function(){
+  return 'Cooking finished';
+});
+
+echo $cook;
+output:processing Cooking finished
+
+
+*Real example of callback function in laravel
+Route::get('me',function(){
+ dd('working');
+})
+
+

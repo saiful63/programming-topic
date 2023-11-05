@@ -1,0 +1,29 @@
+#Key concept
+1.Resource:
+Any thing that we want to expose to outside world ,through our application.It usually portion code we want that client can access,edit,delete and update according to his wish.
+As example :in student management system student,teacher,class,subject all of them invididually a resource.
+
+2.URI(Uniform Resource Identifier)
+It is used to identify resource.As example:student is resource and how we want student it tells.
+
+GET    http://localhost:8000/students/       Return the list of student
+GET    http://localhost:8000/students/12     Return the list student of id 12
+POST   http://localhost:8000/students/       Create a new student
+PUT    http://localhost:8000/students/20     Update a student of id 20
+DELETE http://localhost:8000/students/2      Delete a student of id 2
+
+3.Sub-resource:
+It mean resource under a main resource.As eaample If Post is resource in blog site then comment is subresource.
+*Subresource cannot exists without resources.
+
+4.Http Request Methods:
+HTTP defines a set of request methods  to indicate the desired action to be performed for a given resource.GET,PUT,POST are methods.
+
+5.Http Response codes:
+It indicate whether a specific request has been successfully completed or not.
+
+200(ok)                 REquest is successful
+201(Created)            REquest is successful and new resource created
+401(UNauthirized)       User don't have permission for yhis resource
+404(not found)          Resource not found
+500(internal server error)  Error occured in server

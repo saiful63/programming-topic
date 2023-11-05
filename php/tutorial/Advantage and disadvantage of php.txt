@@ -1,0 +1,28 @@
+#Advantages of PHP
+1. Simple & Easy to Grab
+Developers find PHP code an easy language to learn and work with. Most programmers start their coding journey with C/C++ or Java and PHP is somewhat similar to them which makes it more familiar to the programmers. Since it is an old language, many people have worked with it so far, and hence, it's easy to find enough guidance for beginners. Despite its wide-ranging features, it stands as a simple and clear programming language.
+
+2. The MVC Pattern
+Model-View-Controller Architectural pattern of the PHP framework helps developers in organizing their codes. PHP framework also allows them to keep data manipulating logic separate from the bits handling the display which helps in easy modification of codes.
+
+3. Open-source and Free!
+One of the most important advantages of PHP is that is free and open-source software. This becomes an important factor when it comes to programming and developing as a student. It can be downloaded and can run on any OS like UNIX, Linux, and Windows, etc. It also offers open access to a wide range of PHP frameworks, such as Laravel and Symfony 
+
+4. Flexible Development
+PHP offers customization to a great extent. It is highly flexible and provides an easy connection to a database with its built-in functionalities. It can be used with a large number of relational database management systems such as MySQL, dBase, IBM DB2, ODBC, PostgreSQL, Inter Base, Front Base, SQLite, etc and runs on all web browsers such as Apache, personal web server, Microsoft IIS, Netscape, iPlanet, etc.
+
+5. Faster 
+It also has a faster loading time over slow internet speed than most of the other programming languages. 
+
+
+#Disadvantages of PHP
+Here are some of the disadvantages of PHP:
+
+1. Security issues
+When it comes to security, HP is dramatically criticized. Part of it is a result of being an open-source software where ASCII files are easily accessible. Here are a few common security risks in PHP:
+
+XSS
+SQL Injection
+Session hacking
+
+

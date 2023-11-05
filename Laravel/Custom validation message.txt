@@ -1,0 +1,9 @@
+$validator = $request->validate([
+        'name' => ['required', 'max:5'],
+        'price' => ['required', 'max:3'],
+    ], [
+        'name.required' => 'The name  required.',
+        'name.max' => 'The name less 255 characters.',
+        'price.required' => 'price  required.',
+        'price.max' => 'Price less than 5',
+    ]);

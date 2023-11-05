@@ -1,0 +1,10 @@
+In jQuery, the get() method is used to send an HTTP GET request to a specified URL and retrieve the data returned by the server. It is a shorthand method that simplifies making asynchronous AJAX (Asynchronous JavaScript and XML) requests.
+
+$.get("https://api.example.com/data", { id: 123 }, function(response) {
+    // Callback function executed on success
+    console.log(response);
+}, "json");
+
+In this example, a GET request is sent to the URL "https://api.example.com/data" with the query parameter id set to 123. The server responds with JSON data, which is then passed to the callback function. The callback function logs the response to the console.
+
+

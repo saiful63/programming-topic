@@ -1,0 +1,15 @@
+*Two point
+1.combine data and method into one unit.As example of user class ,user property name,email and user method fetchData is combined in one unit or class named user.
+
+class user{
+
+private name;
+private $email;
+
+public function fetch(){
+
+}
+
+}
+
+2.Hiding of element that is not necessary to show user.As a exam ple,when try to login above fetch method is run and give permission to enter their dashboard but how fetch() method is worked internally that will not be visible to user.

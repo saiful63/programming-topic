@@ -1,0 +1,37 @@
+*Model that convert document(index.html or others) into object that is known as DOM(Document object model)
+*DoM is a document object model and programming interface for Html that defines html objects,properties,methods & events to get,change,add or delete html elements.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Document</title>
+</head>
+<body>
+   <a href="">Click</a>
+   <h1>Header</h1>
+</body>
+</html>
+
+*Js  can understand html by object,
+
+
+const object = {
+    document:{
+        httml:{
+            head:{
+                title:'My title'
+            },
+            body:{
+                a:{
+                    text:'My text',
+                    attribute:'href'
+                },
+                h1:{
+                    'text':'header'
+                }
+            }
+        }
+    }
+}
+
+In real life,this can be converted into a tree.

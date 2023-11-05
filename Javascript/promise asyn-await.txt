@@ -1,0 +1,20 @@
+#  It gives facility to write asynchronous code  through syschronous way.
+to get more clean code through synchronous way ,we can use async-await.
+
+async function myMeeting(){
+try{
+
+    const meetingDetails = await meeting;
+    const calender = await addToCalendar(meetingDetails);
+    console.log(calender);
+
+
+}catch{
+
+console.log('Something wrong happened');
+
+}
+    
+}
+
+myMeeting();

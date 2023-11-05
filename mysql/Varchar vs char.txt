@@ -1,0 +1,6 @@
+1.CHAR datatype is used to store character strings of fixed length.VARCHAR datatype is used to store character strings of variable length
+2.if two field name(varchar 5),roll(char 5).If names length is 3 then   it occupy 3 lengths memory space not 5.On the other hand  if rolls length is 2 ,it occupy 5 lenght memory space not 2.
+3.Varchar is better in terms of space
+4.char is better in terms of performance,data insertion and retrival process is faster in char data type.
+5.Through char data type it can store maximum 256(0-255)  chararter
+6.Varchar store maximum 65535 character.

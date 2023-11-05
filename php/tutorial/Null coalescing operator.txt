@@ -1,0 +1,5 @@
+$name = $_POST['name'] ?? 'John';
+
+In this example, the ?? is the null coalescing operator. It accepts two operands. If the first operand is null or doesn’t exist, the null coalescing operator returns the second operand. Otherwise, it returns the first one.
+
+*It is used to replace the ternary operation in conjunction with isset() function.

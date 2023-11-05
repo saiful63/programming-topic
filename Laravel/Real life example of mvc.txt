@@ -1,0 +1,2 @@
+As a example of almari,we usually separate each such as normal clothes for one,jwellary for one,and  shari for one.
+Mvc maintai this architecture fronted part is handaled by view,backend part is handaled by model and relation between view and model is made by controller

@@ -1,0 +1,45 @@
+*With built in function
+
+$string = 'heightisnothing';
+$str2=[];
+$str3=[];
+for($k = 0; ($string[ $k] ?? false) !== false; $k++);
+
+for($i=0;$i<$k;$i++){
+    if(array_key_exists($string[$i],$str2)){
+      $str2[$string[$i]]++;
+    }else{
+        $str2[$string[$i]]=1;
+        
+    }
+}
+
+foreach($str2 as $key=>$value){
+    if($value==1){
+        echo $key;
+        break;
+    }
+}
+
+Output:e because h,i,n duplicate . s is not duplicate but it did not come first,so this is not answer.
+
+
+*Without built in function:
+
+$string = 'hightisnothing';
+$str2 = [];
+
+for($k = 0; ($string[ $k] ?? false) !== false; $k++);
+
+for ($i = 0; $i < $k; $i++) {
+
+    $str2[$string[$i]] = $str2[$string[$i]] ?? 0;
+    $str2[$string[$i]]++;
+}
+
+foreach ($str2 as $key => $value) {
+    if ($value === 1) {
+        echo $key;
+        break;
+    }
+}

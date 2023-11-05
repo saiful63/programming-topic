@@ -1,0 +1,8 @@
+<script>
+   const numbers = [1,2,4,5,4,2];
+   const duplicate = numbers.filter(function(value,index,array){
+    return array.indexOf(value)!== index
+   });
+
+   console.log(duplicate);
+ </script>

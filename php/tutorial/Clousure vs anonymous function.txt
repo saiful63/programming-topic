@@ -1,0 +1,42 @@
+In PHP, both closures and anonymous functions allow you to create and use functions without having to give them a specific name. They are similar in many ways but have some differences in terms of syntax and usage. Let's explore closures and anonymous functions with examples.
+
+1.Anonymous function:
+An anonymous function, also known as a lambda or clouaure function, is a function without a specific name. You can create an anonymous function using the function keyword. Here is an example:
+
+$add = function ($a, $b) {
+    return $a + $b;
+};
+
+$result = $add(3, 4); // Calling the anonymous function
+echo $result; // Output: 7
+
+In this example, we define an anonymous function that takes two arguments and returns their sum. We then assign this function to the variable $add and call it just like a regular function.
+
+2.Closure:
+
+A closure is a special type of anonymous function that can capture and remember the values of variables from the surrounding scope. This means that closures can access variables that are not passed as arguments explicitly. Here's an example:$base = 10;
+
+$closure = function ($x) use ($base) {
+    return $x + $base;
+};
+
+$result = $closure(5);
+echo $result; // Output: 15
+
+
+In this example, we define a closure that takes one argument $x and uses the $base variable from the outer scope. The use ($base) syntax is used to capture the $base variable within the closure.
+
+
+
+**Returan a anonymous function:
+
+function disp($name){
+  return function() use($name){
+    return $name;
+  };
+}
+
+$a =  disp('Saiful');
+echo $a();
+
+*Necessity of snonymous function:can acces value of outer scope which is not possible for normal function.

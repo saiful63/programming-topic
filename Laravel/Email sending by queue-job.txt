@@ -1,0 +1,52 @@
+Create mail class by *php artisan make:mail 
+
+public function build(){
+       return $this->subject('Test Email')->view('emails.promotional_em');
+    }
+    
+    
+*create view inside email folder  named promotional_em
+  
+<body>
+  <h1>Test Email</h1>
+  <p> {{ $EmailData['name']; }} </p>
+  <p> {{ $EmailData['date']; }} </p>
+</body>
+</html>
+
+
+# working with queue-job
+
+*.env(when mailtrap is fake smtp)
+
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS="hello@example.com"
+
+
+*php artisan queue:table
+
+*Route:
+
+Route::get('/', function () {
+    dispatch(new \App\Jobs\EmailSend())->delay(now()->addSeconds(5));
+    echo "Mail Sent";
+});
+
+*php artisan make:job EmailSend
+
+ public function handle()
+    {
+        $MailData = [
+            'name' => 'Raihan',
+            'date' => '12/7/23'
+        ];
+      Mail::to('akash@gmail.com')->send(new MyEmail($MailData));
+    }
+}
+
+*php artisan queue:work in different terminal , every time when you change in job file you need to run it.

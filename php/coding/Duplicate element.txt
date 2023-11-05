@@ -1,0 +1,97 @@
+1.With Built in function
+
+<?php
+$arr = [5, 2, 4, 2, 5,1];
+$count = count($arr);
+$arr2 = [];
+
+for ($i = 0; $i < $count; $i++) {
+    if (isset($arr2[$arr[$i]])) {
+        echo $arr[$i] . " ";
+    } else {
+        $arr2[$arr[$i]] = $i;
+    }
+} //output:2,5
+
+Consider the input array: $arr = [5, 2, 4, 2, 1];
+
+Initialize an empty associative array $arr2 and the count of elements in the array: $count = count($arr);
+
+Start a loop to iterate over each element of the input array using a for loop.
+
+In the first iteration, $i = 0:
+Check if $arr[$i], which is 5, exists as a key in the $arr2 array using isset(). Since it doesn't exist, the else block is executed.
+Add $arr[$i] as a key to the $arr2 array with the value set to true. Now, $arr2 becomes [5 => true].
+In the second iteration, $i = 1:
+Check if $arr[$i], which is 2, exists as a key in the $arr2 array using isset(). Since it doesn't exist, the else block is executed.
+Add $arr[$i] as a key to the $arr2 array with the value set to true. Now, $arr2 becomes [5 => true, 2 => true].
+Note: At this point, we have encountered 2 for the first time, so it is not considered a duplicate.
+In the third iteration, $i = 2:
+Check if $arr[$i], which is 4, exists as a key in the $arr2 array using isset(). Since it doesn't exist, the else block is executed.
+Add $arr[$i] as a key to the $arr2 array with the value set to true. Now, $arr2 becomes [5 => true, 2 => true, 4 => true].
+Note: At this point, we have encountered 4 for the first time, so it is not considered a duplicate.
+In the fourth iteration, $i = 3:
+Check if $arr[$i], which is 2, exists as a key in the $arr2 array using isset(). Since it exists, the if block is executed.
+Output $arr[$i], which is 2. This represents the first occurrence of the duplicate element 2.
+In the fifth iteration, $i = 4:
+Check if $arr[$i], which is 1, exists as a key in the $arr2 array using isset(). Since it doesn't exist, the else block is executed.
+Add $arr[$i] as a key to the $arr2 array with the value set to true. Now, $arr2 becomes [5 => true, 2 => true, 4 => true, 1 => true].
+Note: At this point, we have encountered 1 for the first time, so it is not considered a duplicate.
+The loop ends, and the code has printed the duplicate elements encountered during the loop, which are 2 2.
+
+Therefore, the output of the code will be 2 2, representing the duplicate elements found in the array [5, 2, 4, 2, 1].
+
+
+
+
+
+2.Without any builtin function
+
+<?php
+$arr = [5, 2, 4, 2, 5, 1];
+$count = 0;
+foreach ($arr as $element) {
+    $count++;
+}
+
+$arr2 = [];
+for ($i = 0; $i < $count; $i++) {
+    $found = false;
+    for ($j = 0; $j < $i; $j++) {
+        if ($arr[$i] == $arr[$j]) {
+             echo $arr[$i] . " ";
+             $arr2[$arr[$i]] = $i;
+            break;
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

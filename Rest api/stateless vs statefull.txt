@@ -1,0 +1,17 @@
+A stateless system sends a request to the server and relays the response (or the state) back without storing any information. On the other hand, stateful systems expect a response, track information, and resend the request if no response is received.
+
+
+Stateless: A stateless system or protocol does not retain any information about previous interactions or sessions. Each request or transaction is handled independently, without any knowledge of past events. Stateless systems are designed to be simple and scalable since they don't need to store or manage any state information. They are typically used in scenarios where each request is self-contained and can be processed without any dependencies on previous requests.
+Example: The Hypertext Transfer Protocol (HTTP) used for web communication is stateless. Each HTTP request sent by a client to a server is independent, and the server does not retain any knowledge of past requests. This means that every time a user interacts with a website, the server treats it as a new request and doesn't remember any previous interactions.
+
+Stateful: A stateful system or protocol maintains information or context about previous interactions or sessions. It stores the state of each client or connection, allowing it to remember past events and provide a more personalized or customized experience. Stateful systems are often used when maintaining state information is necessary to achieve certain functionalities, such as user authentication, session management, or transaction tracking.
+Example: The Transmission Control Protocol (TCP) used for reliable communication over the internet is stateful. TCP establishes a connection between two hosts and maintains state information about the ongoing communication. It ensures that data packets are delivered in the correct order, retransmits lost packets, and manages flow control. The state information stored by TCP allows it to provide a reliable and ordered data transfer between the sender and receiver.
+
+To summarize, the key difference between stateless and stateful lies in whether or not a system retains information about previous interactions. Stateless systems are independent and don't store any state, while stateful systems maintain context and remember past events to enable specific functionalities.
+
+
+
+
+
+
+

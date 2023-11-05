@@ -1,0 +1,2 @@
+$var = "" assigns an empty string value, which is of type string.
+$var1 = null assigns the value null, which represents the absence of any value and is of type null.

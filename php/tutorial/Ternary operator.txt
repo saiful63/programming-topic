@@ -1,0 +1,13 @@
+The ternary operator is a shorthand for the if...else statement.Instead of writing this:
+
+<?php
+
+if (condition) {
+	$result = value1;
+} else {
+	$result = value2;
+}
+
+you can use this:
+
+$result = condition ? value1 : value2;

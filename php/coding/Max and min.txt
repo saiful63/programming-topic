@@ -1,0 +1,15 @@
+<?php
+$arr = [5, 2, 4, 2, 5,1];
+$max = PHP_INT_MIN;
+$min = PHP_INT_MAX;
+for($i=0; $i<count($arr); $i++){
+  
+  if($arr[$i] > $max){
+    $max = $arr[$i];
+    
+  }
+  if($arr[$i] < $min){
+    $min = $arr[$i];
+  }
+}
+echo $max. " ".$min;

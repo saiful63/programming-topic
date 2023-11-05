@@ -1,0 +1,29 @@
+আমরা যারা লারাভেল ফ্রেমওয়ার্ক নিয়ে কাজ করি তাদের জন্য জম্পেশ ১০টা টিউটোরিউয়াল বাছাই করলাম...এগুলা যদি বুঝেশুনে, ভালো করে আত্মস্থ করা যায়, তাহলে বেশ একটা স্কিল আপগ্রেড হবে ইনশাআল্লাহ 💪🏻
+এরকম আরো রিসোর্স নিয়মিত শেয়ার করার ইচ্ছা আছে – চটজলদি আপডেট পেতে নিউজলেটারে সাইনাপ করে রাখুন আর পছন্দের প্ল্যাটফর্মে ফলো করুন। 
+Twitter: https://twitter.com/phpfour
+LinkedIn: https://www.linkedin.com/in/phpfour/
+Newsletter: https://newsletter.phpfour.com/
+––– 
+0.Laravel roadmap:https://laraveldaily.com/roadmap-learning-path
+1. Learn how to upload files in Laravel like a Pro by Steve King 
+https://laravel-news.com/uploading-files-laravel 
+2. Laravel Real-Time Notifications by Christoph Rumpel 
+https://christoph-rumpel.com/.../laravel-real-time...
+3. Bitmasking in Laravel and MySQL by Aaron Francis 
+https://aaronfrancis.com/.../bitmasking-in-laravel-and-mysql 
+4. A Complete Guide to Managing User Permissions in Laravel Apps by Ash Allen 
+https://ashallendesign.co.uk/.../a-complete-guide-to... 
+5. A practical guide to search Eloquent relationships using Laravel Scout Database Driver by Bilal Haidar 
+https://laravel-news.com/laravel-scout-practical-guide 
+6. The new Process facade in Laravel 10 by Marcel Pociot 
+https://beyondco.de/blog/laravel-10-new-process-facade 
+7. Restructuring a Laravel Controller using Services, Events, Jobs, Actions, and more by Povilas Korop 
+https://laravel-news.com/controller-refactor 
+8. Recursive Nested Data in Laravel, The Right Way by Alex Garrett Smith
+https://blog.codecourse.com/recursive-nested-data-in-laravel 
+9. How to build modals with Laravel and Livewire by Philo Hermans
+https://philo.dev/laravel-modals-with-livewire/ 
+10. Proper API Design in Laravel by Martin Joo 
+https://martinjoo.dev/proper-api-design-in-laravel
+11.Testing
+https://christoph-rumpel.com/2023/3/everything-you-can-test-in-your-laravel-application?fbclid=IwAR0vy97EmhC_uATl8tBX4HeswWfWGOfy0wDWZNabJ9wTmkDn8089qBnJgkw

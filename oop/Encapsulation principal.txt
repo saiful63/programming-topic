@@ -1,0 +1,31 @@
+*Encapsulation what varies,Codes which change frequently that should be encapsulate differently .
+
+function Totalprice(){
+$price = 40;
+$amount = 4;
+$gen_price=$price * $amount;
+//Frequently changing code block
+if(country == 'usa) price+=20;
+else if(country == 'EU') price=+10;
+
+
+},This codes doesn't follow this principal because different country can add frequently then we need to  change this portion frequently in  TotalPrice() but other portion remain static.
+
+To solve this ,adding two function is desirable to encapsulate them differently.
+
+function ProduvctPrice()
+{
+
+$price = 40;
+$amount = 4;
+$gen_price=$price * $amount;
+
+}
+
+
+function PriceWithTax(){
+
+//Frequently changing code block
+if(country == 'usa) price+=20;
+else if(country == 'EU') price=+10;
+}

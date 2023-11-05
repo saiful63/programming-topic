@@ -1,0 +1,17 @@
+<?php
+$mul_arr = [
+  
+  [1,2],
+  [4,5],
+  [7,8]
+  ];
+  
+  for($i = 0;$i<count($mul_arr);$i++){
+    for($j=0; $j<3; $j++){
+      echo $mul_arr[$j][$i]." ";
+    }
+  
+    echo"<br>";  //output : 1 4 7
+                            2 5 8
+  }
+

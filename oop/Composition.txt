@@ -1,0 +1,1 @@
+Composition in OOPS is a fundamental concept and describes a class that refers to one or more objects of the other class instance variables.

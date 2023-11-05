@@ -1,0 +1,15 @@
+
+Q:all pairs of an integer array whose sum is equal to a given number
+$arr = [2, 6, 3, 9, 11];
+$arr1 = [];
+$length = count($arr);
+$value = 9;
+for($i=0; $i<$length; $i++){
+  $decision_var = $value - $arr[$i];
+  if(in_array($decision_var , $arr)){
+    echo $arr[$i]. ' '.$decision_var;
+    break;
+  }
+}
+
+Output:6+3=9

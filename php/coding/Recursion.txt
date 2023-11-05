@@ -1,0 +1,19 @@
+The process in which a function calls itself directly or indirectly
+
+*Fibbonacci series by recursion
+$a = 0;
+$b = 1;
+
+function fib($a, $b, $i) {
+  $c = $a + $b;
+  $a = $b;
+  $b = $c;
+  echo $a . " ";
+
+  if ($i < 5) {
+    fib($a, $b, $i + 1);
+  }
+}
+
+echo $a . " ";
+fib($a, $b, 1);

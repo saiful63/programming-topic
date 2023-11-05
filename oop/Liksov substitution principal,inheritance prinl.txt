@@ -1,0 +1,123 @@
+*In simpler words, LSP states that if a program works correctly using a base class, it should also work correctly using any of its derived classes without requiring any modifications to the code that uses the base class.
+
+// Violation of liksov substitution principal
+class Account{
+  private $balance;
+
+  protected function deposit(){
+
+  }
+
+  protected function withdraw($balance){
+   $this->balance = $balance;
+  }
+}
+
+class SavingAccount extends Account{
+  protected function withdraw($balance){
+    return $balance;
+  }
+}
+
+class CurrebtAccount extends Account{
+  protected function withdraw($balance){
+    return $balance;
+  }
+}
+
+class FixedDepositAccount extends Account{
+  protected function withdraw($balance){
+    throw new Exception("This is not suppoted");
+  }
+}
+
+Here we cannot withdraw money through FixedDeposit acccout  but inherited this class from a class where withdraw is common method that is useful for another class SavingAccont and CurrentAccount.It is voilation because this derived class cannot accesswithdraw method of parent class.
+
+
+
+
+
+
+// To acheive liksov substituation principal
+
+class Account{
+  private $balance;
+
+  protected function deposit(){
+
+  }
+
+
+}
+
+abstract class WithdrawAccount extends Account{
+   protected function withdraw();
+}
+
+class SavingAccount extends WithdrawAccount{
+  protected function withdraw($balance){
+    return $balance;
+  }
+}
+
+class CurrebtAccount extends WithdrawAccount{
+  protected function withdraw($balance){
+    return $balance;
+  }
+}
+
+class FixedDepositAccount extends Account{
+  protected function deposit(){
+
+  }
+}
+
+
+
+*Another example
+
+
+class Animal {
+    public function makeSound() {
+        // Common behavior for all animals
+    }
+}
+
+class Dog extends Animal {
+    public function makeSound() {
+        echo "Woof!";
+    }
+}
+
+class Cat extends Animal {
+    public function makeSound() {
+        echo "Meow!";
+    }
+}
+
+function performAnimalSound(Animal $animal) {
+    $animal->makeSound();
+}
+
+$animal1 = new Dog();
+$animal2 = new Cat();
+
+performAnimalSound($animal1); // Output: "Woof!"
+performAnimalSound($animal2); // Output: "Meow!"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

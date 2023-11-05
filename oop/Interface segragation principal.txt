@@ -1,0 +1,185 @@
+*Client shouldn't be forced to depends on method they do not use.
+
+1.Try to make your interfaces narrow enough that client classes don't have to implement behaviours they don't need.
+
+2.Break down 'fat interfaces' to more specific ones. 
+
+As a example,
+
+//Bad practice
+
+interface CloudProvider
+{
+    public function storeFile($name);
+    
+    public function getFile($name);
+
+    public function createServer($region);
+
+    public function listServers($region);
+
+    public function getCDNAddress();
+}
+
+class Amazon implements CloudProvider
+{
+    public function storeFile($name)
+    {
+
+    }
+    
+    public function getFile($name)
+    {
+
+    }
+
+    public function createServer($region)
+    {
+
+    }
+
+    public function listServers($region)
+    {
+
+    }
+
+    public function getCDNAddress()
+    {
+
+    }
+}
+
+class Dropbox implements CloudProvider
+{
+     public function storeFile($name)
+    {
+
+    }
+    
+    public function getFile($name)
+    {
+
+    }
+
+    public function createServer($region)
+    {
+
+    }
+
+    public function listServers($region)
+    {
+          //no work of it
+    }
+
+    public function getCDNAddress()
+    {
+    //no work of it
+    }
+    
+    
+ when drobox extends this CloudProvbider    then listServers and getCDNaA have no responsibility here because dropbox don't work with that. it is bad practice.
+ 
+ 
+ 
+ //Good practice
+ 
+ interface CloudStorageProvider
+{
+    public function storeFile($name);
+    
+    public function getFile($name);
+}
+
+interface CloudHostingProvider
+{
+    public function createServer($region);
+
+    public function listServers($region);
+}
+
+interface CDNProvider
+{
+    public function getCDNAddress();
+}
+
+class Amazon implements CloudStorageProvider, CloudHostingProvider, CDNProvider
+{
+    public function storeFile($name)
+    {
+
+    }
+    
+    public function getFile($name)
+    {
+
+    }
+
+    public function createServer($region)
+    {
+
+    }
+
+    public function listServers($region)
+    {
+
+    }
+
+    public function getCDNAddress()
+    {
+
+    }
+}
+
+class Dropbox implements CloudStorageProvider
+{
+    public function storeFile($name)
+    {
+
+    }
+    
+    public function getFile($name)
+    {
+
+    }
+}
+
+class CloudFront implements CloudHostingProvider, CDNProvider
+{
+    public function createServer($region)
+    {
+
+    }
+
+    public function listServers($region)
+    {
+
+    }
+
+    public function getCDNAddress()
+    {
+
+    }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,32 @@
+1.Brute force approach:
+
+$arr1 = [1, 2, 3,1, 4, 5];
+$arr2 = [8,5];
+$arr3 = [];
+
+foreach($arr1 as $elem1){
+    foreach($arr2 as $elem2){
+        if( $elem1 === $elem2 ){
+            $arr3[] = $elem1;
+        }
+    }
+}
+
+print_r( $arr3) // Output:5
+
+
+2.Optimal approach:
+
+<?php
+$arr1 = [5, 8, 9, 23, 5, 0];
+$arr2 = [1, 8, 5];
+$arr3 = [];
+
+$to_intersection = array_flip($arr2);
+foreach ($arr1 as $item) {
+    if (isset($to_intersection[$item]) && !in_array($item , $arr3)) {
+        $arr3[] = $item;
+    }
+}
+
+print_r($arr3); // 5,8

@@ -1,0 +1,4 @@
+
+*Polymorphism is simply an OOP design pattern that allows multiple class with various functionalities to implement 
+
+*It represent many form of same funtion in different class.

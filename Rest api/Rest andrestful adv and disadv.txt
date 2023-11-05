@@ -1,0 +1,29 @@
+REST uses HTTP requests like GET, PUT, POST, and DELETE to manage CRUD (Create, Read, Update, and Delete) operations. When you start reading about REST, you would also like to read about RESTful and know the differences between them. While REST is a set of constraints, RESTful is an API adhering to those constraints. 
+
+Advantages of REST API:
+
+REST API is a lightweight and flexible architecture that can be easily implemented on any platform or language.
+REST API is stateless, which means that each request contains all the necessary information to complete the request. This allows for scalability and reduces the load on the server.
+REST API is widely adopted and supported by most modern programming languages and frameworks.
+REST API provides a simple and standardized way of accessing resources over the internet.
+Disadvantages of REST API:
+
+REST API may not be the best choice for complex business logic and workflows.
+REST API can be difficult to implement in certain situations, especially when dealing with complex data structures.
+REST API does not provide a built-in authentication or authorization mechanism, which means that developers must implement their own security measures.
+Advantages of RESTful API:
+
+RESTful API is a standardized implementation of the REST architecture, which makes it easier for developers to build and maintain web services.
+RESTful API provides a uniform interface for accessing resources, which simplifies the development process.
+RESTful API supports caching, which can improve performance by reducing the number of requests sent to the server.
+RESTful API can be used with a variety of data formats, including XML and JSON.
+Disadvantages of RESTful API:
+
+RESTful API may not be suitable for complex business logic and workflows.
+RESTful API can be difficult to implement in certain situations, especially when dealing with complex data structures.
+RESTful API can be slower than other web service architectures, especially when dealing with large amounts of data.
+Similarities between REST API and RESTful API:
+
+Both REST API and RESTful API are based on the REST architecture.
+Both REST API and RESTful API are stateless, which means that each request contains all the necessary information to complete the request.
+Both REST API and RESTful API provide a simple and standardized way of accessing resources over the internet.

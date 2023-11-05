@@ -1,0 +1,2 @@
+Service container handle the dependency injection where it is necessary.
+As a example,where we try to insert data into through the help of laravel controller,we usually see (Request $request ) into method.Here $request is  object and we can use anything related http through this object.We do not create this object ,laravel inject it here through service container.

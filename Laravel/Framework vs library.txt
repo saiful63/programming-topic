@@ -1,0 +1,3 @@
+*Framework usually instruct to do something in specific manner.As example Controller in php.In cannot create controller in middleware or view folder. you need to create it inside controller folder.Framework is combination of imultiple package or library.
+
+In library or package developer usually do something according to his will.Library or package is devloped for specific work .As example jquery is used for user interaction.Laravel spatie package is used for roles-permission.we create many fake record with spatie according to developer wish.

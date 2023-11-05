@@ -1,0 +1,5 @@
+*Two things is needed for consideration.
+1.Code re-use
+2.Representation of hierarchical relationship.
+
+It matter that 'is a'relationship is established in the scenario. As a example for 'is a ' relation ship is that ,Several content can have one application such as text,image and video content.All of them are content.text is a content and image,video also content.So 'is a' relationship is established.So in this scenario inheritance can be applied to acheived desired dunctionality.

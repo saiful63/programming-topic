@@ -1,0 +1,33 @@
+WE can develop functionality according to our own.There are sequence in development process that specify one task will execute earlier another will execute later.Through call back we can do it easily.
+
+
+const takeOrder = (customer,callback)=>{
+    console.log(`Taking order from ${customer}`);
+    callback(customer);
+}
+
+const processOrder = (customer,callback)=>{
+    console.log(`Order processing of ${customer}`);
+    setTimeout(()=>{
+       console.log(`Cooking..`);
+       console.log(`Cooking completed for ${customer}`);
+       callback(customer);
+    },3000);
+}
+
+const completeOrder = (customer)=>{
+   console.log(`Order completed for ${customer}`); 
+}
+
+takeOrder('Customer 2',(customer)=>{
+    processOrder(customer,(customer)=>{
+      completeOrder(customer);
+    });
+});
+
+Output:
+Taking order from customer1
+Order processing of customer1
+Cooking..
+Cooking completed for customer1
+Order completed for customer1

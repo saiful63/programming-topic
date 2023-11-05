@@ -1,0 +1,17 @@
+$string = 'heightisnothing';
+
+
+for($k = 0; ($string[ $k] ?? false) !== false; $k++);
+
+// string er last kono value thakbena tai null pabe , 
+// so null colescing operator er dan pasher operand 5 er sathe !==5 
+// condition check korbe .ar ebabe atring er last index er porer index count kora 
+// theke biroto thakbe.
+
+
+echo $k;
+for($i=0;$i<$k;$i++){
+    echo $string[$i]." ";
+}
+
+output : h e i g h t i s n o t h i n g

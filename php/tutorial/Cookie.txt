@@ -1,0 +1,19 @@
+Cookie is a small piece of information stored as a file in the user's browser by the web server. Once created, cookie is sent to the web server as header information with every HTTP request.
+
+You can use cookie to save any data but it should not exceed 1K(1024 bytes) in size.
+
+*Types of Cookies
+There are two types of cookies, they are:
+
+Session Cookie: This type of cookies are temporary and are expire as soon as the session ends or the browser is closed.
+Persistent Cookie: To make a cookie persistent we must provide it with an expiration time. Then the cookie will only expire after the given expiration time, until then it will be a valid cookie.
+
+*Creating a cookie:
+setcookie("username", "iamabhishek", time()+60*60*24*7);
+
+*Deleting a cookie:
+To delete/remove a cookie, we need to expire the cookie, which can be done by updating the cookie using the setcookie() function with expiration date in past.
+setcookie("username", "iamNOTabhishek", time() - 3600);
+
+*Real life example of cookie:
+As a example of questionary form where someone can collet data from user.So there are many input field for information collection.Considering a scenario that user gave some data and leave form.After  some time he/she come back again to provide the rest of data.In this moment he/she got data that he/she filled first time.This data will come from browser through cookie.

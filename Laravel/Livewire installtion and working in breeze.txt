@@ -1,0 +1,52 @@
+1.
+composer require livewire/livewire
+
+2.layouts/app
+
+<body>
+<head>
+@livewireStyles
+</head>
+
+
+@livewireScripts
+</body>
+
+3.
+php artisan make:livewire counter
+
+
+
+4.layouts/dashboard
+
+ {{ __("You're logged in!") }}
+
+ <livewire:counter/>
+ 
+ 
+ 
+ 
+ 5.layouts/livewire/counter
+ 
+ <div>
+   <p>{{ $count }}</p>
+
+   <button wire:click="increase">Increase</button>
+</div>
+
+
+6.Http/livewire/counter
+
+
+public $count = 0;
+    public function render()
+    {
+        return view('livewire.counter');
+    }
+
+    public function increase(FlasherInterface $flasher){
+        $flasher->addSuccess('Success');
+        $this->count++;
+    }
+
+

@@ -1,0 +1,88 @@
+*Three point
+1.High level clases shouldn't depend on low-level class
+2.Both should depend on abstractions
+3.Abstraction shouldn't depend on detail.Deatail should depend on abstraction.
+
+class YoutubeHome
+{
+    private VideoStorageRepository $storageService;
+
+    public function __construct(VideoStorageRepository $storageService)
+    {
+        $this->storageService = $storageService;
+    }
+
+    public function showFeed()
+    {
+        $videos = $this->storageService->getVideos();
+    }
+}
+
+interface VideoStorageRepository
+{
+    public function getVideos();
+}
+
+
+class RemoteVideoStorageService implements VideoStorageRepository
+{
+    public function getVideos()
+    {
+        // call an api to get videos from server
+
+        // return videos
+    }
+}
+
+
+class CachedVideoStorageService implements VideoStorageRepository
+{
+    public function getVideos()
+    {
+        // get videos from local cache
+
+        // return videos
+    }
+}
+
+
+1.Devloping like youtubr application,Here high level class youtubeHome don't depend on low level class
+2.YoutubeHome and RemoteVideoStorage service both depend on VideoStorageRepository
+3.getVideo() used,this mean that when there is no internet then cached video will load .This will not possible if we use GetVideo from server ,like below example
+
+
+
+
+
+//Bad example
+
+
+
+class YoutubeHome // High-level
+{
+    private VideoStorageService $storageService;
+
+    public function __construct(VideoStorageService $storageService)
+    {
+        $this->storageService = $storageService;
+    }
+
+    public function showFeed()
+    {
+        $videos = $this->storageService->getFromServer();
+
+        // show videos in feed
+    }
+}
+
+class VideoStorageService // low-level
+{
+    public function getFromServer()
+    {
+        // call an api to get videos from server
+
+        // return videos
+    }
+}
+
+

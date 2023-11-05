@@ -1,0 +1,24 @@
+*composer self-update,to update version
+*composer self-update --rollback ,to rollback  previous version
+*composer init  , to create composer.json file
+*composer config name "my/myjob"  , to change the key value of composer.json file
+*composer --unset name   , to  remove specific key-value from composer.json
+*composer config --editor  , to open composer.json file in text editor like notepad
+*composer require dompdf/dompdf   , to install a package
+*composer remove dompdf/dompdf   , to remove package from composer.json
+
+*composer require dompdf/dompdf --dev   ,   it install a package in require-dev:{},that means it can be used for development environment for testing or else.This package will not be used in live project or production environment.
+
+
+*Difference composer install and composer update:
+   -For composer install,if composer.lock and composer.json both are present then composer install if version of one package is different in two then it priority composer.lock.
+     -if composer.json is not present then it take composer.lock and install package according to it and provide composer.json.
+     
+     -For composer update,if composer.lock and composer.json both are present then composer update see if version of one package is different in two then it priority composer.json and install package according to it.
+     
+*composer show dompdf/dompdf  , to see information of that package
+*composer show --name=only  , it provide only package name
+*composer show --tree,  it provide information of package like tree structure.     
+     
+     
+     

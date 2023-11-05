@@ -1,0 +1,171 @@
+#worst practice:
+
+<?php
+
+namespace Database\Seeders;
+
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\User;
+
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+
+
+
+    public function run(User $user)
+    {
+
+
+
+        $user_arr = [
+            [
+                'name'=>'Admin',
+                'email'=>'admin@gmail.com',
+                'password'=>bcrypt('password')
+            ],
+            [
+                'name'=>'Teacher',
+                'email'=>'teacher@gmail.com',
+                'password'=>bcrypt('password')
+            ],
+            [
+                'name'=>'Student',
+                'email'=>'student@gmail.com',
+                'password'=>bcrypt('password')
+            ]
+        ];
+
+        foreach( $user_arr as $individual_user ){
+            $user->create($individual_user);
+        }
+
+
+
+       // Role creation
+       $AdminUser = Role::create(['name'=>'Admin']);
+
+       $StudentUser = Role::create(['name'=>'Student']);
+       $TeacherUser = Role::create(['name'=>'Teacher']);
+
+       // Permission creation
+       $CreatePermission = Permission::create(['name'=>'create']);
+       $EditPermission = Permission::create(['name'=>'edit']);
+       $UpdatePermission = Permission::create(['name'=>'update']);
+       $DeletePermission = Permission::create(['name'=>'delete']);
+       $NormalPermission = Permission::create(['name'=>'view']);
+       $ViewAsTeacherPermission = Permission::create(['name'=>'tview']);
+
+
+       // Give permission to role
+       $AdminUser->givePermissionTo( Permission::all() );
+
+       $StudentUser->givePermissionTo( $NormalPermission );
+       $TeacherUser->givePermissionTo( $ViewAsTeacherPermission );
+
+       // Assign role to user
+       $userAdmin = User::find(1);
+       $userAdmin->assignRole('Admin');
+
+       $userStudent = User::where('name','Student')->first();
+       $userStudent->assignRole('Student');
+
+       $userTeacher = User::where('name','Teacher')->first();
+       $userTeacher->assignRole('Teacher');
+
+    }
+
+
+     
+}
+
+
+
+
+
+#Best practice
+
+
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+
+class DatabaseSeeder extends Seeder
+{
+    private const PERMISSIONS = [
+        'create',
+        'edit',
+        'update',
+        'delete',
+        'view',
+        'tview',
+    ];
+
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        // Create users
+        $users = [
+            [
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('password'),
+                'role' => 'Admin',
+            ],
+            [
+                'name' => 'Teacher',
+                'email' => 'teacher@gmail.com',
+                'password' => bcrypt('password'),
+                'role' => 'Teacher',
+            ],
+            [
+                'name' => 'Student',
+                'email' => 'student@gmail.com',
+                'password' => bcrypt('password'),
+                'role' => 'Student',
+            ],
+        ];
+
+        User::query()->createMany($users);
+
+        // Create roles
+        $roles = [
+            'Admin' => Permission::all(),
+            'Teacher' => [Permission::whereName('tview')->first()],
+            'Student' => [Permission::whereName('view')->first()],
+        ];
+
+        foreach ($roles as $roleName => $permissions) {
+            $role = Role::create(['name' => $roleName]);
+            $role->givePermissionTo($permissions);
+        }
+
+        // Assign roles to users
+        foreach ($users as $userData) {
+            $user = User::where('name', $userData['name'])->first();
+            $user->assignRole($userData['role']);
+        }
+    }
+}
+
+
+
+

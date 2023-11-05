@@ -1,0 +1,44 @@
+ <title>Document</title>
+  <style>
+   .container{
+      height: 400px;
+      width: 400px;
+      position: relative;
+      background-color: yellow;
+   }
+
+   .animate{
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top:0;
+      left:0;
+      background-color: red;
+   }
+  </style>
+</head>
+<body>
+ <div class="container">
+   <div class="animate"></div>
+ </div> 
+<button onclick="move()">Animate</button>
+<script>
+function move(){
+   let pos = 0;
+   let animate = document.querySelector('.animate');
+   const interval = setInterval(frame , 5);
+
+   function frame(){
+      if( pos < 350){
+         pos++;
+         animate.style.top = pos + 'px';
+         animate.style.left = pos + 'px';
+      }else{
+         clearInterval(interval);
+      }
+      
+   }
+}
+
+//move();
+</script>

@@ -1,0 +1,30 @@
+<template>
+  <h1>Home component</h1>
+
+  <input type="text" ref="input">
+  
+</template>
+
+<script>
+
+
+export default {
+  name: 'HomeWe',
+  mounted(){
+    this.$refs.input.style.color="red";
+  }
+  
+};
+</script>
+
+<style scoped>
+h1{
+    color: orange;
+}
+.succ{
+    color:green;
+}
+.bg{
+    background-color: red;
+}
+</style>

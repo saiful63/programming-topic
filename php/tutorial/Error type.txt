@@ -1,0 +1,71 @@
+1.Warning Error
+A warning error in PHP does not stop the script from running. It only warns you that there is a problem, one that is likely to cause bigger issues in the future.
+
+The most common causes of warning errors are:
+
+Calling on an external file that does not exist in the directory
+Wrong parameters in a function
+For instance:
+
+<?php
+echo "Warning error"';
+include ("external_file.php");
+?>
+
+As there is no “external_file”, the output displays a message, notifying it failed to include it. Still, it doesn’t stop executing the script.
+
+2.Notice Error
+Notice errors are minor errors. They are similar to warning errors, as they also don’t stop code execution. Often, the system is uncertain whether it’s an actual error or regular code. Notice errors usually occur if the script needs access to an undefined variable.
+
+Example:
+
+<?php
+$a="Defined error";
+echo "Notice error";
+echo $b;
+?>
+
+In the script above, we defined a variable ($a), but called on an undefined variable ($b). PHP executes the script but with a notice error message telling you the variable is not defined.
+
+3.Parse Error (Syntax)
+Parse errors are caused by misused or missing symbols in a syntax. The compiler catches the error and terminates the script.
+
+Parse errors are caused by:
+
+Unclosed brackets or quotes
+Missing or extra semicolons or parentheses
+Misspellings
+For example, the following script would stop execution and signal a parse error:
+
+<?php
+echo "Red";
+echo "Blue";
+echo "Green"
+?>
+
+It is unable to execute because of the missing semicolon in the third line.
+
+
+4.Fatal Error
+Fatal errors are ones that crash your program and are classified as critical errors. An undefined function or class in the script is the main reason for this type of error.
+
+There are three (3) types of fatal errors:
+
+Startup fatal error (when the system can’t run the code at installation)
+Compile time fatal error (when a programmer tries to use nonexistent data)
+Runtime fatal error (happens while the program is running, causing the code to stop working completely)
+For instance, the following script would result in a fatal error:
+
+<?php
+function sub()
+{
+$sub=6-1;
+echo "The sub= ".$sub;
+}
+div();
+?>
+
+The output tells you why it is unable to compile, as in the image below:
+
+
+

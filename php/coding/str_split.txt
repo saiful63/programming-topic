@@ -1,0 +1,42 @@
+The str_split() is an inbuilt function in PHP and is used to convert the given string into an array. This function basically splits the given string into smaller strings of length specified by the user and stores them in an array and returns the array.
+
+Syntax:
+
+array str_split($org_string, $splitting_length)
+
+
+
+<?php 
+// PHP program to display the working of str_split() 
+  
+$string = "Geeks"; 
+  
+// Since second argument is not passed, 
+// string is split into substrings of size 1. 
+print_r(str_split($string)); 
+  
+$string = "GeeksforGeeks"; 
+  
+// Splits string into substrings of size 4 
+// and returns array of substrings. 
+print_r(str_split($string, 4)) 
+?> 
+
+
+Output:
+
+Array
+(
+    [0] => G
+    [1] => e
+    [2] => e
+    [3] => k
+    [4] => s
+)
+Array
+(
+    [0] => Geek
+    [1] => sfor
+    [2] => Geek
+    [3] => s
+)

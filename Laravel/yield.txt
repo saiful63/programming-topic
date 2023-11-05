@@ -1,0 +1,45 @@
+*Yield is a function used in Laravel to define a particular section in layout and it is permanently used to retrieve content from the child page and transfer it into the master page.
+
+*The difference between @yield and @include is how you use them.
+
+If you have a static kind of content, like a navbar, this part of the page will always be in the same place in the layout. When you use @include in the layout file, the navbar will be put once per layout. But if you use @yield you will be enforced to make a @section of the navbar on every page that @extends the layout.
+
+@yield is, on the other hand, a better choice when content is changing on all the pages but you still want to use the same layout everywhere. If you use @include you'll have to make a new layout for every page, because of the difference of content.
+
+Example:
+1.Navbar is static content ,to reuse navbar in different pages ,using @include() in beneficial.
+2.On the other hand a file which contain html head ,title,body with bootstrap cdn that will change differently according to the purpose and in this situatuation @yield() is beneficial.
+
+#home.blade.php:
+
+<html>
+<body>
+
+@yield('content');
+
+</body>
+</html>
+
+#registration.blade.php
+@extends('home')
+
+@section('content)
+
+@endsection('content');
+
+#login.blade.php
+@extends('home')
+
+@section('content)
+
+@endsection('content');
+
+here you can registration and login code will be diiferent but using home.blade.php through @yield();
+
+*Summary:
+through yield we can specify section  that act differently.
+
+
+
+
+নামজ 

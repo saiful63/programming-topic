@@ -1,0 +1,18 @@
+<p class="demo" onclick="loadData()">Learning Ajax</p>
+ 
+
+<script>
+  function loadData(){
+      
+
+      let xhr = new XMLHttpRequest();
+
+      xhr.onload = function(){
+        let demo = document.querySelector('.demo');
+        demo.innerHTML = xhr.responseText;
+      }
+
+      xhr.open('GET','data/data.txt');
+      xhr.send();
+ }
+</script>

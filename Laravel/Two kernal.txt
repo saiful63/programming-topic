@@ -1,0 +1,3 @@
+*One kernel inside http folder,it is usually used when any request come to application through browser then this kerne handle this.
+
+*Another kernel inside console , it is ually used when any request come  to application through terminal then this kernal handle this.

@@ -1,0 +1,26 @@
+Current position er tulonai rightmost index gulo small kina ta check kor hobe .ar ekhane output hbe 5,4
+
+<?php
+
+$arr1 = [2,5,2,1,4];
+$arr2=[];
+$length = count($arr1);
+$temp;
+
+for ($i=0;$i<$length;$i++) {
+    for($j=1;$j!=$length;$j++){
+        if($arr1[$i]>$arr1[$j]){
+         $temp=0;
+        }else{
+            $temp=1;
+        }
+    }
+
+    if($temp==0){
+      array_push($arr2,$arr1[$i]);
+      
+    }
+}
+array_push($arr2,$arr1[$length-1]);
+
+print_r($arr2);

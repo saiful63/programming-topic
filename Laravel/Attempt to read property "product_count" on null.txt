@@ -1,0 +1,4 @@
+*Attempt to read property 'product_count' on null
+If you have many row in db but you are getting in some row and null from other row and performed foreach loop then you get this error.
+
+Solution is : {{ $product->cart->product_count??'0' }}

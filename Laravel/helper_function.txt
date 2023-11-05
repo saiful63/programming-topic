@@ -1,0 +1,1 @@
+*Laravel helper function can be called from both view and controller.some default helper function are dd(),auth(),session(),route()

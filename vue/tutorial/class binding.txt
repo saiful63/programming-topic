@@ -1,0 +1,36 @@
+<template>
+    <h1>Home component</h1>
+    <h1 :class={succ:colorfull,bg:true}>My country Bangladesh</h1>
+    <button v-on:click="colorfull=!colorfull">Change style</button>
+    
+    
+</template>
+
+<script>
+
+
+export default{
+    name:'HomeWe',
+    
+    data(){
+        return{
+           
+           colorfull:false 
+        }
+    },
+    
+    
+}
+</script>
+
+<style scoped>
+h1{
+    color: orange;
+}
+.succ{
+    color:green;
+}
+.bg{
+    background-color: red;
+}
+</style>

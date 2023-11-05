@@ -1,0 +1,17 @@
+*Composer is package manager for  php environment.
+As a example of spatie package,laravel is dependant on it.So composer install it to laravel project.Not only install,it can update version if new version available.
+
+->composer init:Creating composer file that represent we are going start working with composer in this project
+->composer install:if modify something in composer and run it there then change is added
+
+*Another cool thing that composer can do is autoloading  facility.Autoloading means using different file into one file for operation that usually performed by spl_autoload_register() or require_once() in raw php.it is acheived through autoload keyword.
+
+ "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    }
+    
+Here,psr-4 is that represent   standard that is used by php popular framework , how they load different file.   

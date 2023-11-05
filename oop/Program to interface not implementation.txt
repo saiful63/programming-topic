@@ -1,0 +1,69 @@
+*Aim to make relation loosly couple between many class
+
+*Try to make relation with interface intead of class because when implementation will change or new service will be added  then there are possibility of problem.
+
+As a example of invoice,
+
+class InvoiceService
+{
+    protected DeliveryService $courier;  // this class depend on interface or        abstraction,not depend on concreate class.we can another delivery system without any change of InvoiceService class.
+
+    public function __construct(DeliveryService $courier) 
+    {
+        $this->courier = $courier;
+    }
+
+    public function getFinalBill(float $productPrice)
+    {
+        return $productPrice + $this->courier->getDeliveryFee();
+    }
+}
+
+interface DeliveryService
+{
+    public function getDeliveryFee();
+}
+
+class PathaoCourier implements DeliveryService
+{
+    public function getDeliveryFee(): int
+    {
+        return 50;
+    }
+}
+
+class Redx implements DeliveryService
+{
+    public function getDeliveryFee(): int
+    {
+        return 40;
+    }
+}
+
+
+*we cannot acheive all of this by below bad code
+
+
+class InvoiceService
+{
+    protected PathaoCourier $courier;//clearly dependant on concreate class
+
+    public function __construct(PathaoCourier $courier) 
+    {
+        $this->courier = $courier;
+    }
+
+    public function getFinalBill(float $productPrice)
+    {
+        return $productPrice + $this->courier->getDeliveryFee();
+    }
+}
+
+class PathaoCourier
+{
+    public function getDeliveryFee(): int
+    {
+        return 50;
+    }
+}
+

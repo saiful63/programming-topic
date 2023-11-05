@@ -1,0 +1,4 @@
+Actually,--create flag is used to specify name of of a migration file.
+*php artisan make:migration create_users_permission_table,this will create a migration file named "users_permission"
+
+*php artisan make:migration create_users_permission_table --create=permission,this will migration file named "permission" because it is specified in --create flag.

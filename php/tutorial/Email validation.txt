@@ -1,0 +1,47 @@
+Let's take an example email address and see how the regular expression `/^[^\s@]+@[^\s@]+\.[^\s@]+$/` works:
+
+Example email address: `john.doe@example.com`
+
+Now, let's break it down and apply the regular expression step by step:
+
+1. `^`: Start of the string.
+
+2. `[^\s@]+`: Match one or more characters that are not whitespace or the at symbol (`@`). In our example, `john.doe` matches this part.
+
+3. `@`: A literal match for the at symbol.
+
+4. `[^\s@]+`: Again, match one or more characters that are not whitespace or the at symbol. In our example, `example` matches this part.
+
+5. `\.`: A literal match for the dot.
+
+6. `[^\s@]+`: Match one or more characters that are not whitespace or the at symbol. In our example, `com` matches this part.
+
+7. `$`: End of the string.
+
+So, the regular expression successfully matches the entire email address `john.doe@example.com` because it follows the pattern of having a local part (`john.doe`), followed by an `@` symbol, followed by a domain name (`example`), a dot, and a top-level domain (TLD) (`com`).
+
+This regular expression would also match valid email addresses with different local parts, domain names, and TLDs, as long as they follow the basic structure of an email address. However, it may not catch all possible variations of email addresses, and it doesn't perform in-depth validation of the email's authenticity or existence. It's a simple pattern for basic email format validation.
+
+*php code for abobe regex:
+
+$email = "john.doe@example.com"; // Replace with the email you want to validate
+
+$pattern = '/^[^\s@]+@[^\s@]+\.[^\s@]+$/';
+
+if (preg_match($pattern, $email)) {
+    echo "Valid email address";
+} else {
+    echo "Invalid email address";
+}
+
+*another approach by  filter_var:
+
+<?php
+$email = "john.doe@example.com"; // Replace with the email you want to validate
+
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Valid email address";
+} else {
+    echo "Invalid email address";
+}
+

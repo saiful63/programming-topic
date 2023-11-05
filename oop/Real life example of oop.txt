@@ -1,0 +1,2 @@
+In oop we usually see reusability.
+As a real life example,we imagine a building construction where element like bricks and others is buyied and put in specific place.when there is necessity,we can take this from this and do our work.we need not buy stuff  every time when necessity araise.this actually oop inheritance and code reusability.

@@ -1,0 +1,6 @@
+$string = 'heightisnothing';
+$str2=[];
+$str3=[];
+for($k = 0; ($string[ $k] ?? false) !== false; $k++);
+
+echo $k;

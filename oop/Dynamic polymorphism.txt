@@ -1,0 +1,3 @@
+*Programming language which usually use interpreter to understand human readable code,usually use Dynamic polymorphism.It means , which form of method will be called at run time.It use method overriding to acheive desired goal.
+
+As a example of area which calculate circle and triangle area.

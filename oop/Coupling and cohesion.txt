@@ -1,0 +1,30 @@
+*As software developers, we may have heard of the concepts of
+Coupling(desired low) and chesion(desired high) in Object-Oriented Programming. These two concepts are used to
+measure our code quality and ensure it is maintainable and scalable. Let's
+understand the meaning of both terms.
+
+Coupling defines the degree of interdependence between software modules.
+Tight coupling means that modules are closely connected and changes in one
+module can affect others. On the other hand, loose coupling means that
+modules are independent and changes in one module have minimal impact on
+others.
+
+Cohesion defines how effectively elements is combined within one unit. A high level of cohesion means
+that elements within a module are tightly integrated and working together to
+achieve the desired functionality.
+
+*Example
+
+Suppose we have a banking system with different classes representing various functionalities. Two key classes in the system are Account and TransactionManager. The Account class represents a bank account and contains methods for depositing and withdrawing funds, while the TransactionManager class handles the processing of transactions and interacts with the Account class.
+
+Cohesion:
+Cohesion refers to how closely the responsibilities and operations within a single module or class are related. In this example, we can say that the Account class exhibits high cohesion because it focuses on managing account-related operations only. It encapsulates all the methods and attributes related to account functionality, such as depositFunds() and withdrawFunds(). The class is self-contained and performs its specific role efficiently.
+
+Coupling:
+Coupling refers to the degree of interdependence between modules or classes. Low coupling is desirable as it promotes code reusability, maintainability, and flexibility. In our example, we want to minimize coupling between the Account and TransactionManager classes.
+
+Let's say the TransactionManager class needs to access the Account class to perform transactions. One way to achieve low coupling is by using a loose coupling mechanism, such as dependency injection. Instead of directly instantiating the Account class within the TransactionManager class, we pass an instance of the Account class to the TransactionManager class through its constructor or a setter method. This way, the TransactionManager class can interact with the Account class without tightly coupling them together.
+
+By decoupling the TransactionManager class from the specific implementation of the Account class, we gain flexibility. We can easily swap out different account implementations or introduce new classes without modifying the TransactionManager class, as long as they adhere to the agreed-upon interface or contract.
+
+Overall, this example demonstrates the importance of designing classes with high cohesion and low coupling. High cohesion ensures that a class focuses on a single responsibility, making it more maintainable and easier to understand. Low coupling reduces dependencies between classes, promoting code flexibility and reusability.

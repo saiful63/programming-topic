@@ -1,0 +1,31 @@
+
+  <button type="button" onclick="loadData()">Load Data</button>
+
+
+<div class="demo1"></div>
+
+<script>
+ 
+ function loadData(){
+  let da = document.querySelector('.demo1');
+
+  fetch('http://127.0.0.1:5500/data/data.txt')
+       .then( (res)=> res.text() )
+       .then( (data)=> {
+        da.innerText = data;
+       })
+ }
+
+</script>
+
+
+* Through asyns-await
+
+async function loadData(){
+  let da = document.querySelector('.demo1');
+
+  const res = await fetch('http://127.0.0.1:5500/data/data.txt');
+  const data = await res.text();
+  da.innerText = data;
+      
+ }

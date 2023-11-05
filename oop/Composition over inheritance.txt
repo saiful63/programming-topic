@@ -1,0 +1,155 @@
+*Composition over Inheritance
+If composition only gives us indirect access, why use it?
+
+The problem with inheritance is that it can be easily abused, which may lead to a large hierarchy of classes. A large hierarchy of classes is fragile, if we change a class at the top of the hierarchy, any class that depends on it is affected and may need to be changed as well.
+
+As an example, let’s consider a class called Animal and some child classes that inherit from it.
+
+Example:
+
+<?php
+
+class Animal {
+
+    function eat() {
+        echo "Eating...<br>";
+    }
+
+    function walk() {
+        echo "Eating...<br>";
+    }
+}
+
+class Dog extends Animal {}
+class Cat extends Animal {}
+
+?>
+In the example above we have a Dog and a Cat that can both walk(). But, if we add a Fish, the hierarchy needs to change. We would need something like a Mammal class that inherits from Animal, and then we can inherit Dog and Cat from Mammal.
+
+
+*Favor composition
+We can convert any inheritance relationship to composition. As an example, let’s consider that instead of Is-A animal, the child classes now Has-A animal.
+
+Example:
+
+<?php
+
+class Animal {
+
+    function eat() {
+        echo "Eating...<br>";
+    }
+}
+
+class Dog {}
+class Cat {}
+class Fish {}
+
+?>
+In the example above we forgot to give the Animal class a walk() method. If we were using inheritance, we would need to change the Animal class again. And, we still have the problem of the fish.
+
+With composition, it’s as simple as adding two new classes.
+
+Example:
+
+<?php
+
+class Animal {
+    function eat() {
+        echo "Eating...<br>";
+    }
+}
+
+class Walkable {
+    function walk() {
+        echo "Walking...<br>";
+    }
+}
+
+class Swimmable {
+    function swim() {
+        echo "Swimming...<br>";
+    }
+}
+
+class Dog {}
+class Cat {}
+class Fish {}
+
+?>
+In the example above we added a class for any animal that can walk, and a class for any animal that can swim.
+
+The Cat and Dog classes can implement both Walkable and Swimmable, and the Fish class can implement Swimmable.
+
+If we wanted to add a bird, we could simply add a Flyable class, and the bird could implement Walkable, Swimmable and Flyable.
+
+The application is now loosely coupled, as each class stands on its own and is not dependent on another class. Let’s look at a full example.
+
+Example:
+
+<?php
+
+class Animal {
+    function eat() {
+        echo "Eating...<br>";
+    }
+}
+
+class Walkable {
+    function walk() {
+        echo "Walking...<br>";
+    }
+}
+
+class Swimmable {
+    function swim() {
+        echo "Swimming...<br>";
+    }
+}
+
+class Flyable {
+    function fly() {
+        echo "Flying...<br>";
+    }
+}
+
+class Fish {
+
+    var $animal;
+    var $swimmable;
+
+    function __construct() {
+        $this->animal = new Animal();
+        $this->swimmable = new Swimmable();
+    }
+}
+
+class Bird {
+
+    var $animal;
+    var $walkable;
+    var $swimmable;
+    var $flyable;
+
+    function __construct() {
+        $this->animal = new Animal();
+        $this->walkable = new Walkable();
+        $this->swimmable = new Swimmable();
+        $this->flyable = new Flyable();
+    }
+}
+
+echo "Nemo the fish's activities:<br>";
+$nemo = new Fish();
+$nemo->animal->eat();
+$nemo->swimmable->swim();
+echo "<br>";
+
+echo "Tweety the bird's activities:<br>";
+$tweety = new Bird();
+$tweety->animal->eat();
+$tweety->walkable->walk();
+$tweety->swimmable->swim();
+$tweety->flyable->fly();
+
+?>

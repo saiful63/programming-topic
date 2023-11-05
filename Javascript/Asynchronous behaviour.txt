@@ -1,0 +1,15 @@
+#In previous time ,js is said single threaded language that it cannot do multiple task in same time.Problem is that when it need to perform task that need large time then it go to blocking state.This means it complete large task first and thrn complete other ,this give bad user experience.As example , althrough it asyn code but lets see what happened as syn situation.
+
+const processingFood = (customer)=>{
+    setTimeout(()=>{
+     console.log('Cooking completed and serve customer 2');
+    },3000);
+    console.log('Serving snacks to customer 2 and cooking');
+}
+console.log('Serving food to customer 1')
+processingFood();
+*As syn,it require 3 second to run "Cooking completed and serve customer 2"and after it run"Serving snacks to customer 2 and cooking"
+*As asyn,it run "Serving snacks to customer 2 and cooking" first and after 3 s completed it run"Cooking completed and serve customer 2"
+
+#How this hanppened:
+In browser there are call stack and call back queue.When less time consuming task occured that is handaled by call stack but for large time consuming task ,js provide it to web api to process.After processing it is given to callback queue .Through the help of event loop call stack get task that is in call back queue and execute it.

@@ -1,0 +1,14 @@
+
+REST (Representational State Transfer) is an architectural style for designing networked applications. It provides a set of constraints and principles to create scalable, reliable, and maintainable web services. REST has become a popular choice for building APIs (Application Programming Interfaces) due to its simplicity and wide adoption.
+
+Key principles and characteristics of REST architecture include:
+
+1.Client-Server Architecture: REST separates the client (user interface) and server (data storage and processing) components, allowing them to evolve independently. The client is responsible for the user interface, while the server handles data storage and processing.
+
+2.Statelessness: REST is stateless, meaning that the server does not store any client state. Each request from the client must contain all the necessary information for the server to understand and process it. The server does not retain any context or session information between requests.
+
+3.Uniform Interface: REST promotes a uniform interface between the client and server, allowing for a standardized communication mechanism. This interface typically includes methods such as GET, POST, PUT, and DELETE for performing common operations on resources. Resources are identified by URIs (Uniform Resource Identifiers).
+
+4.Cacheability: REST supports caching of responses to improve performance and scalability. The server can indicate whether a response is cacheable or not, and the client can store and reuse the cached responses for future requests.
+
+5.Layered System: REST allows for a layered system architecture, where intermediaries such as load balancers, proxies, or gateways can be placed between clients and servers. Each layer provides specific functionality while remaining independent of the other layers.

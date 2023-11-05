@@ -1,0 +1,72 @@
+*Late static binding is related to inheritance and self keyword.
+self is resolved to the class in which the method belongs. If you define a method in a parent class and call it from a subclass, it self does not reference the subclass as you might expect.
+
+To resolve this issue, PHP 5.3 introduced a new feature called PHP static late binding.
+
+Instead of using the self, you use the static keyword that references an exact class that is called at runtime.
+
+*Without late static binding
+
+class Model
+{
+	protected static $tableName = 'Model';
+
+	public static function getTableName()
+	{
+		return self::$tableName;
+	}
+}
+
+class User extends Model
+{
+	protected static $tableName = 'User';
+}
+
+echo User::getTableName(); // Model, not User
+
+*With late static binding;
+
+class Model
+{
+	protected static $tableName = 'Model';
+
+	public static function getTableName()
+	{
+		return static::$tableName;
+	}
+}
+
+class User extends Model
+{
+	protected static $tableName = 'User';
+}
+
+echo User::getTableName(); // User
+
+*Another example:
+
+class car{
+    public static $name = 'Tesla';
+
+    public static function getCar(){
+        return "The car name is".self::$name;
+    }
+
+    public static function getOwner(){
+        echo static::getCar();
+    }
+}
+
+class newCar extends car{
+    public static function getCar(){
+        return "The car name is".self::$name."and owner is saiful";
+    }
+}
+
+car::getOwner();
+newCar::getOwner();
+
+Output:
+The car name is : Tesla
+The car name is : Tesla and owner is Anshu.
+

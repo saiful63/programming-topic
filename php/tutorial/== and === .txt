@@ -1,0 +1,39 @@
+*The = operator
+This equal sign is usually known as the assignment operator. It assigns the value of what is at the right side of an expression to the left side.
+
+*The == operator
+This is a comparison operator that will return either true or false by comparing the values of variables on both sides
+
+Exam:
+<?php
+$aFew = 4;
+$some = "4";
+
+if($some == $aFew ){
+  echo "The value on both sides are same.";
+}
+?>
+
+
+*The === operator
+The triple equal sign comparison operator not only checks if the variables are equal in value, but it also confirms that they are of the same type before it returns true or false.
+
+Exam:
+<?php
+$aFew = 4;
+$some = 4;
+$many = "4";
+if($some === $many ){
+  echo "Two values are same";
+}
+if($some === $aFew ){
+  echo "Two values are same";
+}
+/*the first if() statement evaluated as 'false'
+ so it didn't execute our echo statement*/
+?>
+
+*Conclusion
+The assignment equality = operator only assigns values.
+The equality == does not assign values, but compares them without checking their data types.
+The triple equals sign operator === won’t do assignment, but will check for equality of values and the data type.

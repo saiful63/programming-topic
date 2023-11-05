@@ -1,0 +1,22 @@
+*Solution1(through isset):
+ $new_arr=[];
+            foreach($nums as $key=>$value){
+            $new_value = $target-$value;
+            if(isset($new_arr[$new_value])){
+                return[$new_arr[$new_value],$key];
+            }else{
+            $new_arr[$value]=$key; 
+            }
+            }
+            
+            
+*Solution 2(through !== false)
+
+ foreach($nums as $key1 => $value1){
+            $new_value2 = array_search($target - $value1, $nums);
+            if ($new_value2 !== true && $new_value2 !== $key1) {
+                return[$new_value2,$key1];
+                break;
+    }
+	
+	}         

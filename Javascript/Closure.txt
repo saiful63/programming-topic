@@ -1,0 +1,21 @@
+A closure is a function having access to the parent scope, even after the parent function has closed.
+
+function temporary(){
+    let counter = 0;
+
+    return function(){  //This function is clousure that can access counter variable of parent functions temporary.
+        counter+=1;
+    }
+}
+
+const add = temporary();
+
+console.dir(add)
+add();
+add();
+add();  //Output: counter=3
+
+Here temporary function is callled ones but value of counter is 3 for using of closure.
+
+Data Encapsulation and Information Hiding: Closures allow you to create private variables and functions within a scope. This helps in encapsulating data and exposing only the necessary parts, making it useful for implementing data privacy and information hiding.
+

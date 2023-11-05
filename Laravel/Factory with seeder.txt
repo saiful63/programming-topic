@@ -1,0 +1,23 @@
+#Laravel :9
+Factory should name same with model such as here model will be Product.
+
+*ProductFactory.php:
+
+public function definition()
+{
+return [
+    'book_name'=>$this->faker->name,
+    'book_writer'=>$this->faker->name,
+    'book_price'=>$this->faker->randomFloat(100,500),
+    'book_image'=>$this->faker->imageUrl()
+];
+}
+    
+*ProductSeeder.php:
+
+public function run()
+{
+
+Product::factory(10)->create();
+}
+    

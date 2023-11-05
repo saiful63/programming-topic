@@ -1,0 +1,7 @@
+<form wire:submit.prevent="UserDelete({{ $user->id }})">
+                    <button  type="submit" onclick="return confirm('Do you want to Delete?')">
+
+                        @include('components.icons.trash')
+
+                    </button>
+                </form>

@@ -1,0 +1,4 @@
+ $request->validate([
+        'name' => 'required|min:2|max:5',
+        'price' => 'required'
+    ]);
