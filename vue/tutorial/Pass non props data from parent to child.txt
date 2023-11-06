@@ -1,0 +1,84 @@
+*HomeWe.vue(parent:)
+
+<template>
+  <h1>Home component</h1>
+  <ChildPrac id="me"/>
+
+</template>
+
+<script>
+import ChildPrac from './ChildPrac.vue';
+
+export default {
+  name: 'HomeWe',
+  components:{
+     ChildPrac
+  },
+  data(){
+    return{
+      data:''
+    }
+  }
+  
+  
+  
+  
+};
+</script>
+
+<style scoped>
+h1{
+    color: orange;
+}
+.succ{
+    color:green;
+}
+.bg{
+    background-color: red;
+}
+</style>
+
+*ChildPrac.vue(child)
+
+<template>
+<div>
+    <h1>Welcome</h1> 
+    <h1>Welcome1</h1> 
+    <h1 v-bind="$attrs">Welcome2</h1> 
+</div><template>
+<div>
+    <h1>Welcome</h1> 
+    <h1>Welcome1</h1> 
+    <h1 v-bind="$attrs">Welcome2</h1> 
+</div>
+     
+    
+</template>
+
+<script>
+export default{
+    name:'ChildPrac',
+    inheritAttrs:false,
+    data(){
+        
+    },
+   
+}
+</script>
+
+     
+    
+</template>
+
+<script>
+export default{
+    name:'ChildPrac',
+    inheritAttrs:false,
+    data(){
+        
+    },
+   
+}
+</script>
+
+

@@ -1,0 +1,32 @@
+*When there is necessity to perform complex logic then computed is necessary for performance consideration
+*When there same operation performed again and again then it is necessary
+
+<template>
+  <h1>Home component</h1>
+  {{ getResult }}
+  {{ getResult }}
+</template>
+
+<script>
+
+
+export default {
+  name: 'HomeWe',
+  data(){
+    return{
+      dollar:100,
+      rupee:300,
+      discount:20
+    }
+  },
+  computed:{
+    getResult(){
+      return (this.dollar*this.rupee)-this.discount;
+    }
+  }
+  
+  
+  
+  
+};
+</script>

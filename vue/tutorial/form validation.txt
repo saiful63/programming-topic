@@ -1,0 +1,93 @@
+<template>
+  <h1>Home component</h1>
+  <p>
+    {{ form }}
+  </p>
+
+  <ul>
+    <li v-for="item in error" v-bind:key="item">
+      {{ item }} is mandatory
+    </li>
+  </ul>
+
+    <label for="">Email: </label>
+    <input type="text" placeholder="Enter name" v-model="form.email">
+    <br><br>
+    <label for="">Password: </label>
+    <input type="password" placeholder="Enter password" v-model="form.password">
+    <br><br>
+
+    <label for="">Country</label>
+    <select v-model="form.country">
+      <option value="Bangladesh">Bangladesh</option>
+      <option value="India">India</option>
+      <option value="Pak">Pak</option>
+    </select>
+    <br> <br>
+
+
+    
+ 
+  <h3>Technology </h3>
+    Java<input type="checkbox" value="java" id="java" v-model="form.technology">
+    <br><br>
+    php<input type="checkbox" value="php" id="php" v-model="form.technology">
+    <br><br>
+
+    <h3>Gender </h3>
+    Male<input type="radio" value="male" name="gender" v-model="form.gender">
+    <br><br>
+    Female<input type="radio" value="female" name="gender" v-model="form.gender">
+    <br><br>
+  <button type="submit" v-on:click="login">Login</button>
+</template>
+
+<script>
+
+
+export default {
+  name: 'HomeWe',
+  data(){
+    return{
+      form:{
+        email:'',
+        password:'',
+        country:'',
+        technology:[],
+        gender:''
+      },
+      error:[]
+    }
+  },
+  methods:{
+    login(){
+      this.error = [];
+      for(const item in this.form){
+        if(this.form[item]==="" || this.form[item].length===0){
+          this.error.push(item);
+        }
+      }
+
+      if(this.error.length === 0){
+        alert('Data submitted');
+      }
+      console.warn("Login data",this.form);
+    }
+  }
+  
+  
+};
+</script>
+
+<style scoped>
+h1{
+    color: orange;
+}
+.succ{
+    color:green;
+}
+.bg{
+    background-color: red;
+}
+</style>
+
