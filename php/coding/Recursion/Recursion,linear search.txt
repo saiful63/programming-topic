@@ -1,0 +1,21 @@
+function linearSearch($arr, $size, $val, $index = 0){
+  if($index == $size){
+    return false;
+  }
+  if($arr[$index] == $val){
+    return true;
+  } else {
+    return linearSearch($arr, $size, $val, $index + 1);
+  }
+}
+
+$arr = [1, 4, 6, 7];
+$size = 4;
+$val = 1;
+$result = linearSearch($arr, $size, $val) ;
+if($result){
+  echo "true";
+}else{
+  echo "false";
+}
+

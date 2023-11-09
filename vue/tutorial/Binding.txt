@@ -1,0 +1,24 @@
+*One way binding:one-way data binding, i.e data flows in one direction, in our case, from the data property to the template.
+*two way binding:two-way data binding, i.e data flows in both direction, from the data property to the template and from template to data property.To acheive ,v-mode is needed to use.
+
+*Example:
+
+<template>
+<input type="text" placeholder="Enter name" v-model="form.email">
+</template>
+
+<script>
+export default{
+
+ data(){
+    return{
+      form:{
+        email:'',
+        
+      },
+}
+
+</script>
+
+
+

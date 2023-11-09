@@ -1,0 +1,53 @@
+*In Vue. js, slots are a way to pass content to a component. They allow you to define a section of a component's template that can be replaced by the parent component. This allows the parent component to control the layout and content of the child component.If we want to pass content like html then i can use it.
+
+*With props, you can only pass values to the child component, so the parent wouldn't be able to customize the child. If you have a defined design and you just need to change some values, use props! Slots give you more flexibility and allow you to customize the child component from the parent.
+
+*Example:
+HomeWe.vue(parent):
+<template>
+  <h1>Home component</h1>
+  <Child><h1>Hello i am</h1></Child>
+  <Child><a href="">Click here</a></Child>
+  
+</template>
+
+<script>
+
+import Child from './ChildPrac.vue';
+
+export default {
+  name: 'HomeWe',
+  components:{
+     Child
+  }
+  
+  
+  
+};
+</script>
+
+*ChildPrac.vue(child):
+
+<template>
+<div>
+    <slot></slot>
+</div>
+     
+    
+</template>
+
+<script>
+export default{
+    name:'ChildPrac'
+   
+}
+</script>
+
+
+*If we don't pass anything from parent but still try to access some data from child , by below process it can be done
+<Child></Child>
+<slot>Default msg</slot>
+
+
+
+

@@ -1,0 +1,20 @@
+
+function sayDigit($n,$arr){
+  if($n<1){
+    return;
+  }
+
+  $digit = $n%10;
+  $n = (int)$n/10;
+  
+  sayDigit($n,$arr);
+  print $arr[$digit]." ";
+  
+  
+}
+
+$num = 587;
+$arr = ["zero","one","two","three","four","five","six","seven","eight","nine"];
+sayDigit($num,$arr);
+
+Output:five eight seven

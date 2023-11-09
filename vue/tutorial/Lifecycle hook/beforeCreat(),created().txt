@@ -1,0 +1,36 @@
+*beforeCreate:The beforeCreate lifecycle hook is the first hook that is called during a Vue component's lifecycle.
+
+The beforeCreate lifecycle hook is used to run code before the component is created.
+
+Because the component is not created yet, we cannot access properties inside the component instance such as data or computed, and we cannot access component DOM elements because they are also not created yet.
+
+*created:
+The created lifecycle hook is called after the component is initialized.
+
+Because the component is initialized, we can access properties inside the component instance such as data or computed, but we cannot access component DOM elements because they are not created until the mounted hook.
+
+Example:In this example first beforeCreate() is called after that all component property in initialize and console a output and then the created() method is called.
+
+<template>
+  <h1>Home component</h1>
+
+</template>
+
+<script>
+
+
+export default {
+  name: 'HomeWe',
+  beforeCreate(){
+    alert("Before created");
+  },
+  created(){
+    alert("Created");
+  },
+  data(){
+    console.warn('created');
+  }
+  
+  
+};
+</script>

@@ -1,0 +1,7 @@
+In Vue.js, data declaration is done inside the data property, it is a function that returns an object containing all the variables we can use on the template and inside other parts of the Vue.js app.
+data() {
+    return {
+      firstName: 'vue',
+      lastName: 'noob',
+    };
+  },

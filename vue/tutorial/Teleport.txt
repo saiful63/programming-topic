@@ -1,0 +1,46 @@
+* Vue 3 that allows developers to move a component's content to a different location in the DOM tree.
+*In vue application,there can be div with app in index.html.This is actually mounted by which we can use vue feature on that div.But when there is necessity to pass component or data to other div  that can be acheived by teleport.Example is given below.
+
+here FooterCh compoment is passed to to div which id id footer.
+
+*HomeWe.vue(parent)
+
+<template>
+  <h1>Home component</h1>
+ <teleport to="#footer">
+   <FooterCh/>
+ </teleport>
+</template>
+
+<script>
+
+import FooterCh from './FooterCh.vue';
+
+export default {
+  name: 'HomeWe',
+  components:{
+     FooterCh
+  }
+  
+  
+};
+</script>
+
+*FooterCh.vue(child)
+
+<template>
+    <h1>This is Footer</h1>
+    <p>Copyright @ 2023</p>
+</template>
+
+<script>
+
+export default{
+    name:'FooterCh'
+}
+</script>
+
+
+
+
+

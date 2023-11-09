@@ -1,0 +1,40 @@
+The process in which a function calls itself directly or indirectly
+*two consideration
+1.base condition(condition by which recursion process is terminated).In below program "if($n==0){
+    return 1;
+  }" this is base condition.
+2.Recursion call
+
+*Fibbonacci series by recursion
+function fact($n){
+  if($n==0){
+    return 1;
+  }
+  $factorial = fact($n-1);
+  $result = $n*$factorial;
+  return $result;
+}
+
+echo fact(3);
+
+*Process:
+1.fact(3),where n=3 that != 0
+2.fact(2),where n=2 that != 0
+3.fact(1),where n=1 that != 0
+4.fact(0),where n=0 that == 0,so it return 1 to fact(0)
+$result = $n*$factorial; n=1,$factorial = 1
+$result = 1*1
+
+5.this result return to fact(1),where n =1
+$result = $n*$factorial; n=1,$factorial = 1
+$result = 1*1
+
+4.this result return to fact(2),where n =2
+$result = $n*$factorial; n=2,$factorial = 1
+$result = 2*1=2
+
+5.this result return to fact(3),where n =3
+$result = $n*$factorial; n=3,$factorial = 2
+$result = 3*2=6
+
+so output:6

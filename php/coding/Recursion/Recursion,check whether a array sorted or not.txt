@@ -1,0 +1,30 @@
+$r=0;
+function sortCheck($n,$arr){
+  if($n==0){
+    return -1;
+  }
+
+$s = sortCheck($n-1,$arr); 
+
+$temp = $arr[$n];
+
+if($temp>$s){
+  $r=$GLOBALS['r']++;
+  print $r." ";
+  return $temp;
+}else{
+  $r=0;
+}
+
+}
+
+$num = 2;
+$arr = [2,3,6];
+sortCheck($num,$arr);
+
+if($r==$num){
+
+  echo "true";
+}else{
+  echo "false";
+}

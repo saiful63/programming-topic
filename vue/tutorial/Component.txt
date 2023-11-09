@@ -1,0 +1,1 @@
+Components are reusable and self-contained pieces of code that encapsulates a specific part of the user interface, so that we can make Vue applications that are scalable and easier to maintain

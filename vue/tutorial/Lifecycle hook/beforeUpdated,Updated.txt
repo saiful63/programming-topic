@@ -1,0 +1,43 @@
+*beforeUpdated:
+The beforeUpdate lifecycle hook happens after Vue's reactive system has detected a change that requires a new rendering, but before that rendering happens.
+
+To avoid an infinite loop we should always consider to use the beforeUpdate lifecycle hook instead of the updated lifecycle hook.
+
+*updated:
+The updated lifecycle hook happens right after the DOM tree has updated.
+
+
+<template>
+  <h1>Home component</h1>
+  <h1 ref="count">{{ count }}</h1>
+  <button @click="count=count+1">Update count</button>
+
+</template>
+
+<script>
+
+
+export default {
+  name: 'HomeWe',
+  data(){
+    return{
+      count:0
+    }
+  },
+  beforeUpdate(){
+    console.log('beforeUpdated',this.$refs['count'].textContent);
+  },
+  updated(){
+    console.log('Updated',this.$refs['count'].textContent);
+  }
+  
+  
+};
+</script>
+
+output:
+
+beforeUpdated 0
+Updated 1
+beforeUpdated 1
+Updated 2

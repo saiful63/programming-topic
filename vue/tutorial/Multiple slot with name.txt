@@ -1,0 +1,53 @@
+*HomeWe.vue(parent):
+
+<template>
+  <h1>Home component</h1>
+  <Child>
+    <template v-slot:card_header>
+         <h1>Vue js</h1>
+    </template>
+
+    <template v-slot:card_body>
+         <p>Vue js is awesome framework</p>
+    </template>
+
+    <template v-slot:card_btn>
+        <button>See more</button>
+    </template>
+  </Child>
+  
+</template>
+
+<script>
+
+import Child from './ChildPrac.vue';
+
+export default {
+  name: 'HomeWe',
+  components:{
+     Child
+  }
+  
+  
+  
+};
+</script>
+
+*ChildPrac.vue(child):
+
+<template>
+<div>
+    <slot name="card_header"></slot>
+    <slot name="card_body"></slot>
+    <slot name="card_btn"></slot>
+</div>
+     
+    
+</template>
+
+<script>
+export default{
+    name:'ChildPrac'
+   
+}
+</script>

@@ -1,0 +1,45 @@
+A watcher is a method that watches a data property with the same name.
+
+A watcher runs every time the data property value changes.
+
+Use a watcher if a certain data property value requires an action.
+
+<template>
+  <h1>Home component</h1>
+  <button v-on:click="count=count+1">+</button>
+  <button v-on:click="count=count-1">-</button>
+  {{ count }}
+  {{ previous }}
+  {{ next }}
+</template>
+
+<script>
+
+
+export default {
+  name: 'HomeWe',
+  data(){
+    return{
+      count:0,
+      previous:'',
+      next:''
+    }
+  },
+  watch:{
+    count(val,pre){
+      if(val>=5){
+        return this.count=0,this.previous=pre,this.next=val;
+      }
+    }
+  }
+  
+  
+  
+};
+</script>
+
+Output:
+when val==5 then
+Count:0 
+Previous:4 
+Next:5

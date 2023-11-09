@@ -1,0 +1,41 @@
+*beforeMount: The beforeMount lifecycle hook happens right before the component is mounted, so just before the component is added to the DOM.
+
+Because the component is not mounted yet, we can access properties inside the component instance such as data or computed, but we cannot access the component's DOM elements because they are not mounted yet.
+
+*mounted:The mounted lifecycle hook happens after the Vue component is mounted to the DOM tree.
+
+Because the component is mounted, we can access the properties that belong to the component instance such as data or computed, and we can access the component's DOM elements because they have just been mounted to the DOM.
+
+
+Example is given:
+
+<template>
+  <h1>Home component{{name}}</h1>
+
+</template>
+
+<script>
+
+
+export default {
+  name: 'HomeWe',
+  data(){
+    return{
+      name:'Saiful'
+    }
+  },
+  beforeMount(){
+  console.warn("beforeMount",this.name);  we can access properties inside the component instance such as data or computed
+    console.warn("beforeMount",this.$el);
+  },
+  mounted(){
+    console.warn("monted",this.$el);  this.$el, which refers to the root element of the component.
+  }
+  
+  
+};
+</script>
+
+output:
+*we cannot access component element(inside template)  by beforeMount(),instead it give output null through consol.warn
+*we can access component element(inside template)  by mounted(), it give output component element through consol.warn

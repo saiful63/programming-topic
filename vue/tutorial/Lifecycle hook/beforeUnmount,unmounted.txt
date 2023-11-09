@@ -1,0 +1,59 @@
+*beforeUnmount:
+The beforeUnmount lifecycle hook happens right before the component is removed from the DOM.
+
+When running code in the beforeUnmount hook, the component is still fully functional.
+
+*unmounted:
+The unmounted lifecycle hook is called after a component is removed from the DOM.
+
+Example:
+
+Throug clicking toggle button ChildPrac cmponent is removed by making it false.Before remove it gives output h1 to console by beforeUnmount() but after remove it givrs null as output in console.
+*HomeWe.vue(parent)
+
+<template>
+  <h1>Home component</h1>
+  
+  <button @click="show=!show">Toggle</button>
+  <ChildPrac v-if="show"/>
+</template>
+
+<script>
+
+import ChildPrac from './ChildPrac.vue';
+
+export default {
+  name: 'HomeWe',
+  components:{
+     ChildPrac
+  },
+  data(){
+    return{
+      show:true
+    }
+  }
+  
+  
+};
+</script>
+
+*ChildPrac.vue(child):
+
+<template>
+
+    <h1 ref="user">Child component</h1>   
+</template>
+
+<script>
+export default{
+    name:'ChildPrac',
+    beforeUnmount(){
+        console.log('beforeUnmount',this.$refs['user'])
+    },
+    unmounted(){
+        console.log('Unmount',this.$refs['user'])
+    }
+   
+}
+</script>
+

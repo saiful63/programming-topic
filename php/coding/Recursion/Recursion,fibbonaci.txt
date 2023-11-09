@@ -1,0 +1,20 @@
+<?php
+function fib($n){
+  if($n==1){
+    return 1;
+  }
+  if($n==0){
+    return 0;
+  }
+
+  $sum = fib($n-1)+fib($n-2);
+  
+  
+   return $sum;
+  
+  
+
+}
+
+echo fib(4);
+

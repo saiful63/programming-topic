@@ -1,0 +1,5 @@
+Each Vue component(a view file in Vue.js) goes through a series of must-have initialization steps when it’s created.it goes through different phases like creation, mounting, updating, and destruction.
+
+Every component is a Vue instance, we can modify their states according to our need at specific stages.
+
+There are some lifecycle hook method that is given in this folder.

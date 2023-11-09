@@ -1,0 +1,80 @@
+*To load component dynamically,it is used.
+As a example,there is 3 componet PhpPr,JavaPr,NodePr.To buuton click , specific component will load .This goal is acheived by dynamic component.Example is given below.
+
+*HomeWe.vue(parent)
+
+<template>
+  <h1>Home component</h1>
+ 
+  <button @click="active='PhpPr'">Load php</button>
+  <button @click="active='JavaPr'">Load Java</button>
+  <button @click="active='NodePr'">Load Node</button>
+  <component :is="active"/>
+</template>
+
+<script>
+
+import JavaPr from './JavaPr.vue';
+import NodePr from './NodePr.vue';
+import PhpPr from './PhpPr.vue';
+
+export default {
+  name: 'HomeWe',
+  components:{
+     JavaPr,
+     NodePr,
+     PhpPr
+  },
+  data(){
+    return{
+      active:PhpPr
+    }
+  }
+  
+  
+  
+};
+</script>
+
+*PhpPr.vue(child)
+
+<template>
+    <h1>Php content</h1>
+</template>
+
+<script>
+
+export default{
+    name:'PhpPr'
+}
+</script>
+
+
+*JavaPr.vue(child)
+<template>
+    <h1>Java content</h1>
+</template>
+
+<script>
+
+export default{
+    name:'JavaPr'
+}
+</script>
+
+
+*NodePr.vue(child)
+
+<template>
+    <h1>Node content</h1>
+</template>
+
+<script>
+
+export default{
+    name:'NodePr'
+}
+</script>
+
+
+
