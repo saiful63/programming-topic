@@ -1,0 +1,33 @@
+Vue Template Refs are attributes used to refer to specific DOM elements 
+
+When the ref attribute is set on an HTML tag, the resulting DOM element is added to the $refs object.
+
+We can use the ref attribute and the $refs object in Vue as an alternative to methods in plain JavaScript like getElementById() or querySelector().
+
+HTML tags with the ref attribute will be added to the $refs object and can be reached later from inside the <script> tag.
+
+*Example:
+
+<template>
+  <h1>api call</h1>
+
+  <button @click="changeText">Click</button>
+  <p ref="ll">Me here</p>
+</template>
+
+<script>
+
+
+
+export default {
+  name: 'App',
+  methods:{
+    changeText(){
+      this.$refs.ll.innerHTML="Changed";
+    }
+  }
+  
+}
+</script>
+
+output:changed(through btn click)

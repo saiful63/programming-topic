@@ -1,0 +1,1 @@
+*with the help of cli,i can create project through this command: vue create me(app name)

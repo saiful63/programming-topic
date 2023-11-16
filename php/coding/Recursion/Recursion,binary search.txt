@@ -1,0 +1,38 @@
+
+function binarySearch($arr,$val,$start,$end,$mid){
+    
+    $mid = floor(($start+$end)/2);
+    
+    if($start>$end){
+        return;
+    }
+    if($arr[$mid] == $val){
+        $GLOBALS['index'] = $mid;
+        $GLOBALS['r']=1;
+        return;
+    }
+    if($arr[$mid]<$val){
+        $start = $mid+1;
+        return binarySearch($arr,$val,$start,$end,$mid);
+    }
+    if($arr[$mid]>$val){
+        $end = $mid-1;
+        return binarySearch($arr,$val,$start,$end,$mid);
+    }
+
+    
+}
+
+
+$arr = [3,6,9,14,45,56];
+$val = 9;
+$start = 0;
+$r=0;
+$index;
+$end = count($arr)-1;
+binarySearch($arr,$val,$start,$end,$mid=null);
+if($r==1){
+    echo "Found" ."at index:".$index;
+}else{
+    echo "Not found";
+}

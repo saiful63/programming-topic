@@ -1,0 +1,22 @@
+The array_shift() pops the first value of the array off and returns it, shortening the array by one element and shifting each element down. Numerical keys will be reset to start counting from 0, whereas the remaining literal keys will not be affected.
+
+*Example
+The following example shifts the first element in $counting_rhyme and assigns the returned value to the $removed variable, then it prints out $removed and the modified $counting_rhyme array.
+
+<?php
+  $counting_rhyme = ["Eeny", "Meeny", "Miny", "Moe"];
+  $removed = array_shift($counting_rhyme);
+  echo $removed . "\n";
+  print_r($counting_rhyme)
+?>
+
+The above code results in the following output:
+
+Eeny
+Array
+(
+  [0] => Meeny
+  [1] => Miny
+  [2] => Moe
+)
+

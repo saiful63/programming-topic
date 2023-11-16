@@ -70,3 +70,23 @@ h1{
 </style>
 
 
+
+
+
+
+
+In vue js,I have edit but
+
+
+
+
+
+
+
+
+
+
+
+I
+
+

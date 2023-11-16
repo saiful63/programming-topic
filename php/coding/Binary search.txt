@@ -1,0 +1,29 @@
+*this algorithm divide the array into two halves ,if mid index value is equal to $val then this is output,if mid index value in less than $val then $start is increased by 1,if mid index is greater than $val then $end is decresed by one and ultimately give output if value is present otherwise not found.
+
+$arr = [3,6,9,14,45,56];
+$val = 6;
+$index;
+$r=0;
+$start = 0;
+$end = count($arr)-1;
+
+ 
+ for($i=0;$i<count($arr);$i++){
+    $mid = floor(($start+$end)/2);
+    if($arr[$mid] == $val){
+        $index = $mid;
+        $r=1;
+    }
+    if($arr[$mid]<$val){
+        $start = $mid+1;
+    }
+    if($arr[$mid]>$val){
+        $end = $mid-1;
+    }
+ }   
+    
+if($r==1){
+    echo "found"." "."index is:".$index;
+}else{
+    echo "not Found";
+}

@@ -1,4 +1,4 @@
-function linearSearch($arr, $size, $val, $index = 0){
+*function linearSearch($arr, $size, $val, $index = 0){
   if($index == $size){
     return false;
   }
@@ -18,4 +18,26 @@ if($result){
 }else{
   echo "false";
 }
+
+
+*Through decreasing array size
+
+function linearSearch($arr, $size, $val) {
+    if ($size == 0) {
+        return false;
+    }
+
+    if ($arr[0] == $val) {
+        return true;
+    } else {
+        array_shift($arr);  // Remove the first element from the array
+        $size--;            // Decrease the size of the array
+        return linearSearch($arr, $size, $val);
+    }
+}
+
+$arr = [1, 4, 6, 7];
+$size = count($arr);
+$val = 0;
+echo linearSearch($arr, $size, $val) ? 'Found' : 'Not Found';
 

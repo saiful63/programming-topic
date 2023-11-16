@@ -1,0 +1,79 @@
+*It continution of Routing.txt
+
+
+*when there is necessity to pass value dynamically to route then this come into picture.As a example of profile page ,to get specific person profile,such as
+-http://localhost:8080/profile/raihan(raihan profile)
+-http://localhost:8080/profile/saiful(saiful profile)
+
+this example is given.
+
+*routes.js
+
+import { createWebHistory,createRouter } from "vue-router";
+import Home from './components/HomeWe.vue';
+import Login from "./components/LoginPg.vue";
+import Profile from "./components/ProfilePg.vue";
+
+const routes = [
+	{
+		name: "Home",
+		path: "/",
+		component: Home,
+	},
+	{
+		name: "Login",
+		path: "/login",
+		component: Login,
+	},
+	{
+		name: "Profile",
+		path: "/profile",
+		component: Profile,
+	},
+	{
+		name: "ProfileSp",
+		path: "/profile/:name",
+		component: Profile,
+	},
+];
+
+
+const router=createRouter({
+    history:createWebHistory(),
+    routes
+});
+
+export default router;
+
+*ProfilePg.vue:
+
+<template>
+  <h1>{{profile}}'s Profile page</h1>
+</template>
+
+<script>
+
+import {useRoute} from 'vue-router'
+
+export default {
+  name: 'ProfilePg',
+  data(){
+    return{
+        profile:''
+    }
+  },
+  mounted(){
+    const router = useRoute();
+    console.warn("route",router.params.name);
+    this.profile = router.params.name;
+  }
+  
+  
+};
+</script>
+
+
+
+
+
+

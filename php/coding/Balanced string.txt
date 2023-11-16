@@ -1,0 +1,30 @@
+*bracket that will start must be close such as ({[]}),{[]})
+
+function isBalanced($str1){
+  $mewarr = [];
+  $len = strlen($str1)-1;
+  for($i=0;$i<=$len;$i++){
+    $char = $str1[$i];
+    if($char=='(' || $char=='{' || $char=='['){
+       array_push($mewarr,$char);
+    }elseif($char==')' || $char=='}' || $char==']'){
+        if( empty($mewarr) || ($char==')'&& array_pop($mewarr)!='(') || ($char=='}' && array_pop($mewarr)!='{')
+        || ($char==']' && array_pop($mewarr)!='[') ){
+         return false;
+    }
+    }
+  }
+
+  if(empty($mewarr)){
+    return true;
+  }
+
+}
+
+$st = "({[]})";
+$result=isBalanced($st);
+if($result){
+    echo "Balanced";
+}else{
+    echo "Unbalanced";
+}

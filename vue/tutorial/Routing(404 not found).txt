@@ -1,0 +1,40 @@
+*routes.js:
+
+import NotFound from "./components/NotFound.vue";
+
+const routes = [
+	{
+		name: "NotFound",
+		path: "/:pathMatch(.*)*",
+		component: NotFound,
+	},
+];
+
+*NotFound.vue:
+
+<template>
+  <h1>404 not found</h1>
+</template>
+
+<script>
+
+
+
+export default {
+  name: 'NotFound'
+  
+  
+};
+</script>
+
+<style scoped>
+h1{
+    color: orange;
+}
+.succ{
+    color:green;
+}
+.bg{
+    background-color: red;
+}
+</style>

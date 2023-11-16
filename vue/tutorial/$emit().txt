@@ -1,0 +1,36 @@
+#To pass data from parent to child $emit() is used.
+
+#.Example:
+
+*AddCustomerModal.vue(child)
+
+*showData(){
+    this.$emit('showMsg',23);
+}
+
+*mounted(){
+this.showData();
+},
+
+
+*CustomerData.vue(parent)
+<template>
+{{result}}
+<AddCustomerModal @showMsg="getData($event)"></AddCustomerModal>
+</template>
+
+
+*data(){
+result:''
+}
+
+
+*methods:{
+getData(data){
+console.log(data)
+this.result = data;
+}
+}
+
+Output:23
+
